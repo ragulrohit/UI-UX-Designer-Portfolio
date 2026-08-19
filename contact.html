@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Arjun Mehta | UI/UX Designer</title>
+    <meta name="description" content="Get in touch with Arjun Mehta for UI/UX design projects, freelance work, and collaborations.">
+    <meta name="keywords" content="Contact Arjun Mehta, UI/UX Designer, Freelance Designer, Bangalore">
+    <meta name="author" content="Arjun Mehta">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div class="animated-bg" aria-hidden="true">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+        <div class="bg-blob blob-3"></div>
+        <div class="floating-particles">
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+        </div>
+        <div class="grid-pattern"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo" aria-label="Arjun Mehta - Home">
+                <img src="images/Stackly_logo.png" class="site-logo" alt="Stackly">
+            </a>
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="skills.html" class="nav-link" role="menuitem">Skills</a></li>
+                <li role="none"><a href="projects.html" class="nav-link" role="menuitem">Projects</a></li>
+                <li role="none"><a href="services.html" class="nav-link" role="menuitem">Services</a></li>
+                <li role="none"><a href="contact.html" class="nav-link active" role="menuitem">Contact</a></li>
+                <li role="none"><a href="login.html" class="nav-link" role="menuitem">Login</a></li>
+                <li role="none"><a href="#" class="btn btn-primary nav-btn" role="menuitem" data-action="download-resume">Resume ↓</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================= -->
+    <!-- HERO BANNER                                   -->
+    <!-- ============================================= -->
+    <section class="hero" style="min-height: 45vh; padding-top: calc(var(--navbar-height, 80px) + var(--space-16, 4rem));">
+        <div class="container" style="grid-template-columns: 1fr;">
+            <div class="hero-content" style="text-align: center;">
+                <p class="section-subtitle">Let's Create Together</p>
+                <h1 class="hero-title" style="margin-bottom: var(--space-4, 1rem);">Get In <span class="gradient-text">Touch</span></h1>
+                <nav aria-label="Breadcrumb">
+                    <ul style="display: inline-flex; align-items: center; gap: var(--space-2, 0.5rem); list-style: none; padding: 0; margin: 0;">
+                        <li><a href="index.html" style="font-size: var(--text-sm, 0.875rem); color: var(--text-muted, #888); text-decoration: none; transition: color 0.2s;">Home</a></li>
+                        <li style="color: var(--text-dim, #555); font-size: var(--text-sm, 0.875rem);">/</li>
+                        <li><span style="font-size: var(--text-sm, 0.875rem); color: var(--color-primary-light, #a78bfa); font-weight: 600;">Contact</span></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- CONTACT SECTION                               -->
+    <!-- ============================================= -->
+    <section class="section contact" id="contact" style="padding-top: var(--space-12, 3rem); padding-bottom: var(--space-16, 4rem);">
+        <div class="container" style="max-width: var(--container-max, 1200px); margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--space-10, 2.5rem); align-items: start;" class="contact-layout-grid">
+
+                <!-- ============================================= -->
+                <!-- LEFT: CONTACT FORM                            -->
+                <!-- ============================================= -->
+                <div class="contact-form-wrapper reveal-left">
+                    <div class="skill-card" style="padding: var(--space-8, 2rem); border-radius: var(--radius-2xl, 1.5rem);">
+                        <div style="margin-bottom: var(--space-6, 1.5rem);">
+                            <h2 style="font-family: var(--font-heading, 'Poppins', sans-serif); font-size: var(--text-2xl, 1.5rem); font-weight: 700; margin-bottom: var(--space-2, 0.5rem);">Send Me a Message</h2>
+                            <p style="color: var(--text-muted, #888); font-size: var(--text-sm, 0.875rem);">Fill out the form below and I'll get back to you within 24 hours.</p>
+                        </div>
+
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <!-- Full Name -->
+                            <div class="form-group" style="margin-bottom: var(--space-5, 1.25rem);">
+                                <label for="fullName" class="form-label" style="display: block; font-size: var(--text-sm, 0.875rem); font-weight: 600; margin-bottom: var(--space-2, 0.5rem); color: var(--text-primary, #fff);">Full Name <span style="color: var(--color-accent-pink, #f472b6);">*</span></label>
+                                <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Enter your full name" required aria-required="true" style="width: 100%; padding: var(--space-3, 0.75rem) var(--space-4, 1rem); background: var(--bg-tertiary, #1a1a2e); border: 1px solid var(--border-color, #2a2a3e); border-radius: var(--radius-lg, 0.75rem); color: var(--text-primary, #fff); font-size: var(--text-base, 1rem); font-family: var(--font-body, 'Inter', sans-serif); outline: none; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box;">
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group" style="margin-bottom: var(--space-5, 1.25rem);">
+                                <label for="email" class="form-label" style="display: block; font-size: var(--text-sm, 0.875rem); font-weight: 600; margin-bottom: var(--space-2, 0.5rem); color: var(--text-primary, #fff);">Email Address <span style="color: var(--color-accent-pink, #f472b6);">*</span></label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required aria-required="true" style="width: 100%; padding: var(--space-3, 0.75rem) var(--space-4, 1rem); background: var(--bg-tertiary, #1a1a2e); border: 1px solid var(--border-color, #2a2a3e); border-radius: var(--radius-lg, 0.75rem); color: var(--text-primary, #fff); font-size: var(--text-base, 1rem); font-family: var(--font-body, 'Inter', sans-serif); outline: none; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box;">
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="form-group" style="margin-bottom: var(--space-5, 1.25rem);">
+                                <label for="phone" class="form-label" style="display: block; font-size: var(--text-sm, 0.875rem); font-weight: 600; margin-bottom: var(--space-2, 0.5rem); color: var(--text-primary, #fff);">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number" style="width: 100%; padding: var(--space-3, 0.75rem) var(--space-4, 1rem); background: var(--bg-tertiary, #1a1a2e); border: 1px solid var(--border-color, #2a2a3e); border-radius: var(--radius-lg, 0.75rem); color: var(--text-primary, #fff); font-size: var(--text-base, 1rem); font-family: var(--font-body, 'Inter', sans-serif); outline: none; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box;">
+                            </div>
+
+                            <!-- Company (Optional) -->
+                            <div class="form-group" style="margin-bottom: var(--space-5, 1.25rem);">
+                                <label for="company" class="form-label" style="display: block; font-size: var(--text-sm, 0.875rem); font-weight: 600; margin-bottom: var(--space-2, 0.5rem); color: var(--text-primary, #fff);">Company <span style="color: var(--text-dim, #555); font-weight: 400;">(Optional)</span></label>
+                                <input type="text" id="company" name="company" class="form-input" placeholder="Your company name" style="width: 100%; padding: var(--space-3, 0.75rem) var(--space-4, 1rem); background: var(--bg-tertiary, #1a1a2e); border: 1px solid var(--border-color, #2a2a3e); border-radius: var(--radius-lg, 0.75rem); color: var(--text-primary, #fff); font-size: var(--text-base, 1rem); font-family: var(--font-body, 'Inter', sans-serif); outline: none; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box;">
+                            </div>
+
+                            <!-- Project Type & Budget Row -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4, 1rem); margin-bottom: var(--space-5, 1.25rem);" class="form-row-contact">
+                                <div class="form-group">
+                                    <label for="projectType" class="form-label" style="display: block; font-size: var(--text-sm, 0.875rem); font-weight: 600; margin-bottom: var(--space-2, 0.5rem); color: var(--text-primary, #fff);">Project Type <span style="color: var(--color-accent-pink, #f472b6);">*</span></label>
+                                    <select id="projectType" name="projectType" class="form-select" required aria-required="true" style="width: 100%; padding: var(--space-3, 0.75rem) var(--space-4, 1rem); background: var(--bg-tertiary, #1a1a2e); border: 1px solid var(--border-color, #2a2a3e); border-radius: var(--radius-lg, 0.75rem); color: var(--text-primary, #fff); font-size: var(--text-base, 1rem); font-family: var(--font-body, 'Inter', sans-serif); outline: none; transition: border-color 0.2s; cursor: pointer; box-sizing: border-box; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%23888" d="M6 8L1 3h10z"/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                                        <option value="" disabled selected>Select project type</option>
+                                        <option value="mobile-app-design">Mobile App Design</option>
+                                        <option value="web-design">Web Design</option>
+                                        <option value="product-design">Product Design</option>
+                                        <option value="design-system">Design System</option>
+                                        <option value="ux-audit">UX Audit</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="budget" class="form-label" style="display: block; font-size: var(--text-sm, 0.875rem); font-weight: 600; margin-bottom: var(--space-2, 0.5rem); color: var(--text-primary, #fff);">Budget Range</label>
+                                    <select id="budget" name="budget" class="form-select" style="width: 100%; padding: var(--space-3, 0.75rem) var(--space-4, 1rem); background: var(--bg-tertiary, #1a1a2e); border: 1px solid var(--border-color, #2a2a3e); border-radius: var(--radius-lg, 0.75rem); color: var(--text-primary, #fff); font-size: var(--text-base, 1rem); font-family: var(--font-body, 'Inter', sans-serif); outline: none; transition: border-color 0.2s; cursor: pointer; box-sizing: border-box; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%23888" d="M6 8L1 3h10z"/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                                        <option value="" disabled selected>Select budget range</option>
+                                        <option value="1k-5k">$1K - $5K</option>
+                                        <option value="5k-10k">$5K - $10K</option>
+                                        <option value="10k-25k">$10K - $25K</option>
+                                        <option value="25k+">$25K+</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Timeline -->
+                            <div class="form-group" style="margin-bottom: var(--space-5, 1.25rem);">
+                                <label for="timeline" class="form-label" style="display: block; font-size: var(--text-sm, 0.875rem); font-weight: 600; margin-bottom: var(--space-2, 0.5rem); color: var(--text-primary, #fff);">Timeline</label>
+                                <select id="timeline" name="timeline" class="form-select" style="width: 100%; padding: var(--space-3, 0.75rem) var(--space-4, 1rem); background: var(--bg-tertiary, #1a1a2e); border: 1px solid var(--border-color, #2a2a3e); border-radius: var(--radius-lg, 0.75rem); color: var(--text-primary, #fff); font-size: var(--text-base, 1rem); font-family: var(--font-body, 'Inter', sans-serif); outline: none; transition: border-color 0.2s; cursor: pointer; box-sizing: border-box; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%23888" d="M6 8L1 3h10z"/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                                    <option value="" disabled selected>Select your timeline</option>
+                                    <option value="1-2-weeks">1 - 2 weeks</option>
+                                    <option value="1-month">1 month</option>
+                                    <option value="2-3-months">2 - 3 months</option>
+                                    <option value="3+-months">3+ months</option>
+                                </select>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="form-group" style="margin-bottom: var(--space-6, 1.5rem);">
+                                <label for="message" class="form-label" style="display: block; font-size: var(--text-sm, 0.875rem); font-weight: 600; margin-bottom: var(--space-2, 0.5rem); color: var(--text-primary, #fff);">Message <span style="color: var(--color-accent-pink, #f472b6);">*</span></label>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell me about your project, goals, and any specific requirements..." required aria-required="true" style="width: 100%; padding: var(--space-3, 0.75rem) var(--space-4, 1rem); background: var(--bg-tertiary, #1a1a2e); border: 1px solid var(--border-color, #2a2a3e); border-radius: var(--radius-lg, 0.75rem); color: var(--text-primary, #fff); font-size: var(--text-base, 1rem); font-family: var(--font-body, 'Inter', sans-serif); outline: none; transition: border-color 0.2s, box-shadow 0.2s; resize: vertical; min-height: 120px; box-sizing: border-box;"></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" data-action="submit-form" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: var(--space-2, 0.5rem); padding: var(--space-4, 1rem) var(--space-8, 2rem); font-size: var(--text-base, 1rem); font-weight: 600; border-radius: var(--radius-lg, 0.75rem); cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-arrow" style="font-size: 1.1em;">&#8594;</span>
+                                <span class="btn-loading" style="display: none; position: absolute; inset: 0; align-items: center; justify-content: center; gap: var(--space-2, 0.5rem);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="animation: spin 1s linear infinite;">
+                                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                                    </svg>
+                                    Sending...
+                                </span>
+                            </button>
+
+                            <!-- Success Message -->
+                            <div class="form-success" id="formSuccess" style="display: none; margin-top: var(--space-4, 1rem); padding: var(--space-4, 1rem); background: rgba(var(--color-success-rgb, 34, 197, 94), 0.12); border: 1px solid rgba(var(--color-success-rgb, 34, 197, 94), 0.25); border-radius: var(--radius-lg, 0.75rem); text-align: center;">
+                                <p style="color: var(--color-success, #22c55e); font-weight: 600; font-size: var(--text-sm, 0.875rem);">Your message has been sent successfully! I'll get back to you soon.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ============================================= -->
+                <!-- RIGHT: CONTACT INFO                          -->
+                <!-- ============================================= -->
+                <div class="contact-info-wrapper reveal-right">
+                    <!-- Contact Info Cards -->
+                    <div style="display: flex; flex-direction: column; gap: var(--space-4, 1rem); margin-bottom: var(--space-6, 1.5rem);">
+
+                        <!-- Email Card -->
+                        <div class="skill-card" style="padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem); border-radius: var(--radius-xl, 1.25rem); display: flex; align-items: center; gap: var(--space-4, 1rem); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                            <div style="width: 48px; height: 48px; min-width: 48px; border-radius: var(--radius-lg, 0.75rem); background: rgba(var(--color-primary-rgb, 139, 92, 246), 0.12); display: flex; align-items: center; justify-content: center;">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light, #a78bfa)" stroke-width="2" stroke-linecap="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                    <polyline points="2,4 12,13 22,4"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p style="font-size: var(--text-xs, 0.75rem); color: var(--text-muted, #888); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 2px 0;">Email</p>
+                                <a href="mailto:arjun@designmail.com" style="font-size: var(--text-sm, 0.875rem); color: var(--text-primary, #fff); text-decoration: none; font-weight: 500; transition: color 0.2s;">arjun@designmail.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone Card -->
+                        <div class="skill-card" style="padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem); border-radius: var(--radius-xl, 1.25rem); display: flex; align-items: center; gap: var(--space-4, 1rem); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                            <div style="width: 48px; height: 48px; min-width: 48px; border-radius: var(--radius-lg, 0.75rem); background: rgba(var(--color-accent-cyan-rgb, 34, 211, 238), 0.12); display: flex; align-items: center; justify-content: center;">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-cyan, #22d3ee)" stroke-width="2" stroke-linecap="round">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p style="font-size: var(--text-xs, 0.75rem); color: var(--text-muted, #888); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 2px 0;">Phone</p>
+                                <a href="tel:+919876543210" style="font-size: var(--text-sm, 0.875rem); color: var(--text-primary, #fff); text-decoration: none; font-weight: 500; transition: color 0.2s;">+91 98765 43210</a>
+                            </div>
+                        </div>
+
+                        <!-- Location Card -->
+                        <div class="skill-card" style="padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem); border-radius: var(--radius-xl, 1.25rem); display: flex; align-items: center; gap: var(--space-4, 1rem); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                            <div style="width: 48px; height: 48px; min-width: 48px; border-radius: var(--radius-lg, 0.75rem); background: rgba(var(--color-accent-pink-rgb, 244, 114, 182), 0.12); display: flex; align-items: center; justify-content: center;">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-pink, #f472b6)" stroke-width="2" stroke-linecap="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p style="font-size: var(--text-xs, 0.75rem); color: var(--text-muted, #888); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 2px 0;">Location</p>
+                                <span style="font-size: var(--text-sm, 0.875rem); color: var(--text-primary, #fff); font-weight: 500;">Bangalore, India</span>
+                            </div>
+                        </div>
+
+                        <!-- Availability Card -->
+                        <div class="skill-card" style="padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem); border-radius: var(--radius-xl, 1.25rem); display: flex; align-items: center; gap: var(--space-4, 1rem); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                            <div style="width: 48px; height: 48px; min-width: 48px; border-radius: var(--radius-lg, 0.75rem); background: rgba(var(--color-success-rgb, 34, 197, 94), 0.12); display: flex; align-items: center; justify-content: center;">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-success, #22c55e)" stroke-width="2" stroke-linecap="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="16,12 12,8 8,12"/>
+                                    <line x1="12" y1="16" x2="12" y2="8"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p style="font-size: var(--text-xs, 0.75rem); color: var(--text-muted, #888); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 2px 0;">Availability</p>
+                                <span style="display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-sm, 0.875rem); font-weight: 600; color: var(--color-success, #22c55e);">
+                                    <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-success, #22c55e); display: inline-block; animation: pulse-dot 2s infinite;"></span>
+                                    Open for freelance
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="skill-card" style="padding: var(--space-6, 1.5rem); border-radius: var(--radius-xl, 1.25rem); margin-bottom: var(--space-6, 1.5rem);">
+                        <h3 style="font-family: var(--font-heading, 'Poppins', sans-serif); font-size: var(--text-base, 1rem); font-weight: 600; margin: 0 0 var(--space-4, 1rem) 0;">Connect With Me</h3>
+                        <div style="display: flex; gap: var(--space-3, 0.75rem); flex-wrap: wrap;">
+                            <!-- LinkedIn -->
+                            <a href="https://linkedin.com/in/arjunmehta" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" style="display: flex; align-items: center; gap: var(--space-2, 0.5rem); padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem); background: var(--bg-tertiary, #1a1a2e); border: 1px solid var(--border-color, #2a2a3e); border-radius: var(--radius-lg, 0.75rem); color: var(--text-primary, #fff); text-decoration: none; font-size: var(--text-sm, 0.875rem); font-weight: 500; transition: all 0.3s ease;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                                    <rect x="2" y="9" width="4" height="12"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                                LinkedIn
+                            </a>
+                            <!-- Behance -->
+                            <a href="https://behance.net/arjunmehta" target="_blank" rel="noopener noreferrer" aria-label="Behance Profile" style="display: flex; align-items: center; gap: var(--space-2, 0.5rem); padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem); background: var(--bg-tertiary, #1a1a2e); border: 1px solid var(--border-color, #2a2a3e); border-radius: var(--radius-lg, 0.75rem); color: var(--text-primary, #fff); text-decoration: none; font-size: var(--text-sm, 0.875rem); font-weight: 500; transition: all 0.3s ease;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                    <path d="M1 12.5h6.5c2.5 0 4-1.5 4-3.5s-1.5-3.5-4-3.5H1v10.5h7c2.5 0 4.5-1.5 4.5-4s-2-4-4.5-4"/>
+                                    <path d="M15 13h7.5c1.5 0 2.5-1 2.5-2.5S24 8 22.5 8H15v5zm0 0v5.5h7c1.5 0 2.5-1 2.5-2.5S23.5 13 22 13"/>
+                                    <line x1="15" y1="6" x2="23" y2="6"/>
+                                </svg>
+                                Behance
+                            </a>
+                            <!-- Dribbble -->
+                            <a href="https://dribbble.com/arjunmehta" target="_blank" rel="noopener noreferrer" aria-label="Dribbble Profile" style="display: flex; align-items: center; gap: var(--space-2, 0.5rem); padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem); background: var(--bg-tertiary, #1a1a2e); border: 1px solid var(--border-color, #2a2a3e); border-radius: var(--radius-lg, 0.75rem); color: var(--text-primary, #fff); text-decoration: none; font-size: var(--text-sm, 0.875rem); font-weight: 500; transition: all 0.3s ease;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72"/>
+                                    <path d="M19.13 5.09c-3.61 2.46-7.26 3.54-12.13 3.21"/>
+                                    <path d="M2.34 14.6c5.39-.34 9.39-.56 14.66-3.72"/>
+                                </svg>
+                                Dribbble
+                            </a>
+                            <!-- Twitter -->
+                            <a href="https://twitter.com/arjunmehta" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile" style="display: flex; align-items: center; gap: var(--space-2, 0.5rem); padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem); background: var(--bg-tertiary, #1a1a2e); border: 1px solid var(--border-color, #2a2a3e); border-radius: var(--radius-lg, 0.75rem); color: var(--text-primary, #fff); text-decoration: none; font-size: var(--text-sm, 0.875rem); font-weight: 500; transition: all 0.3s ease;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                                </svg>
+                                Twitter
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Let's Connect CTA Card -->
+                    <div class="skill-card" style="padding: var(--space-8, 2rem); border-radius: var(--radius-xl, 1.25rem); text-align: center; background: var(--gradient-primary, linear-gradient(135deg, #8b5cf6, #a78bfa)); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; border-radius: 50%; background: rgba(255,255,255,0.08);"></div>
+                        <div style="position: absolute; bottom: -20px; left: -20px; width: 80px; height: 80px; border-radius: 50%; background: rgba(255,255,255,0.05);"></div>
+                        <div style="position: relative; z-index: 1;">
+                            <h3 style="font-family: var(--font-heading, 'Poppins', sans-serif); font-size: var(--text-xl, 1.25rem); font-weight: 700; color: #fff; margin: 0 0 var(--space-3, 0.75rem) 0;">Let's Connect</h3>
+                            <p style="color: rgba(255,255,255,0.85); font-size: var(--text-sm, 0.875rem); margin: 0 0 var(--space-5, 1.25rem) 0; line-height: 1.6;">Have a project in mind? I'd love to hear about it. Let's discuss how we can create something amazing together.</p>
+                            <a href="mailto:arjun@designmail.com" style="display: inline-flex; align-items: center; gap: var(--space-2, 0.5rem); padding: var(--space-3, 0.75rem) var(--space-6, 1.5rem); background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius-full, 9999px); color: #fff; font-weight: 600; font-size: var(--text-sm, 0.875rem); text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(10px);">
+                                Start a Conversation
+                                <span style="font-size: 1.1em;">&#8594;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- MAP PLACEHOLDER                               -->
+    <!-- ============================================= -->
+    <section class="section" style="padding-top: 0; padding-bottom: var(--space-16, 4rem);">
+        <div class="container" style="max-width: var(--container-max, 1200px); margin: 0 auto;">
+            <div class="reveal" style="border-radius: var(--radius-2xl, 1.5rem); overflow: hidden; border: 1px solid var(--border-color, #2a2a3e);">
+                <iframe
+                    title="Map showing Bangalore, India"
+                    src="https://www.google.com/maps?q=Bangalore%2C%20India&amp;output=embed"
+                    width="100%"
+                    height="320"
+                    style="display: block; border: 0;"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- FAQ SECTION                                   -->
+    <!-- ============================================= -->
+    <section class="section" style="background: var(--bg-secondary, #0f0f1a); padding-top: var(--space-16, 4rem); padding-bottom: var(--space-16, 4rem);">
+        <div class="container" style="max-width: var(--container-narrow, 800px); margin: 0 auto;">
+            <div class="section-header reveal" style="text-align: center; margin-bottom: var(--space-10, 2.5rem);">
+                <p class="section-subtitle">FAQ</p>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description">Got questions? I've got answers. Here are some of the most common things people ask before we start working together.</p>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="faq-list" style="display: flex; flex-direction: column; gap: var(--space-3, 0.75rem);">
+
+                <!-- FAQ 1 -->
+                <details class="faq-item skill-card reveal delay-1" style="border-radius: var(--radius-xl, 1.25rem); overflow: hidden;">
+                    <summary style="padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4, 1rem); font-family: var(--font-heading, 'Poppins', sans-serif); font-weight: 600; font-size: var(--text-base, 1rem); color: var(--text-primary, #fff); list-style: none; transition: color 0.2s; user-select: none;">
+                        <span>What is your design process?</span>
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="min-width: 20px; transition: transform 0.3s ease;">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </summary>
+                    <div style="padding: 0 var(--space-6, 1.5rem) var(--space-5, 1.25rem); color: var(--text-muted, #888); font-size: var(--text-sm, 0.875rem); line-height: 1.7;">
+                        <p style="margin: 0;">My design process follows a structured yet flexible approach. It typically begins with <strong style="color: var(--text-primary, #fff);">Discovery & Research</strong> — understanding your business goals, users, and competitive landscape. I then move to <strong style="color: var(--text-primary, #fff);">Ideation</strong>, exploring concepts through wireframes and sketches. Next comes <strong style="color: var(--text-primary, #fff);">Design</strong>, where I craft high-fidelity UI with attention to every pixel. I prototype key interactions for <strong style="color: var(--text-primary, #fff);">Testing</strong>, gather feedback, and iterate. Finally, I ensure a smooth <strong style="color: var(--text-primary, #fff);">Handoff</strong> with developers, providing specs, assets, and ongoing support.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="faq-item skill-card reveal delay-2" style="border-radius: var(--radius-xl, 1.25rem); overflow: hidden;">
+                    <summary style="padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4, 1rem); font-family: var(--font-heading, 'Poppins', sans-serif); font-weight: 600; font-size: var(--text-base, 1rem); color: var(--text-primary, #fff); list-style: none; transition: color 0.2s; user-select: none;">
+                        <span>How long does a typical project take?</span>
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="min-width: 20px; transition: transform 0.3s ease;">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </summary>
+                    <div style="padding: 0 var(--space-6, 1.5rem) var(--space-5, 1.25rem); color: var(--text-muted, #888); font-size: var(--text-sm, 0.875rem); line-height: 1.7;">
+                        <p style="margin: 0;">Project timelines vary based on scope and complexity. A <strong style="color: var(--text-primary, #fff);">landing page or simple UI</strong> may take 1-2 weeks. A <strong style="color: var(--text-primary, #fff);">full mobile app or web application</strong> typically ranges from 4-8 weeks. Larger <strong style="color: var(--text-primary, #fff);">product design or design system</strong> projects can span 2-3 months or more. I always provide a detailed timeline during the discovery phase so there are no surprises.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="faq-item skill-card reveal delay-3" style="border-radius: var(--radius-xl, 1.25rem); overflow: hidden;">
+                    <summary style="padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4, 1rem); font-family: var(--font-heading, 'Poppins', sans-serif); font-weight: 600; font-size: var(--text-base, 1rem); color: var(--text-primary, #fff); list-style: none; transition: color 0.2s; user-select: none;">
+                        <span>What are your rates?</span>
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="min-width: 20px; transition: transform 0.3s ease;">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </summary>
+                    <div style="padding: 0 var(--space-6, 1.5rem) var(--space-5, 1.25rem); color: var(--text-muted, #888); font-size: var(--text-sm, 0.875rem); line-height: 1.7;">
+                        <p style="margin: 0;">I offer flexible pricing models depending on the project type. For smaller engagements, I work on a <strong style="color: var(--text-primary, #fff);">fixed project fee</strong>. For ongoing collaborations, I offer <strong style="color: var(--text-primary, #fff);">monthly retainers</strong>. I also provide <strong style="color: var(--text-primary, #fff);">hourly consulting</strong> for UX audits or advisory sessions. Every project begins with a free discovery call where we scope the work together, and I provide a transparent quote before any commitment.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details class="faq-item skill-card reveal delay-4" style="border-radius: var(--radius-xl, 1.25rem); overflow: hidden;">
+                    <summary style="padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4, 1rem); font-family: var(--font-heading, 'Poppins', sans-serif); font-weight: 600; font-size: var(--text-base, 1rem); color: var(--text-primary, #fff); list-style: none; transition: color 0.2s; user-select: none;">
+                        <span>Do you work with international clients?</span>
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="min-width: 20px; transition: transform 0.3s ease;">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </summary>
+                    <div style="padding: 0 var(--space-6, 1.5rem) var(--space-5, 1.25rem); color: var(--text-muted, #888); font-size: var(--text-sm, 0.875rem); line-height: 1.7;">
+                        <p style="margin: 0;">Absolutely! I've had the pleasure of working with clients across the <strong style="color: var(--text-primary, #fff);">US, UK, Europe, Middle East, and Southeast Asia</strong>. Remote collaboration is second nature to me. I'm comfortable working across time zones and use tools like Figma, Slack, Zoom, and Notion to keep communication seamless. Whether you're in New York or Singapore, we can create something great together.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 5 -->
+                <details class="faq-item skill-card reveal delay-5" style="border-radius: var(--radius-xl, 1.25rem); overflow: hidden;">
+                    <summary style="padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4, 1rem); font-family: var(--font-heading, 'Poppins', sans-serif); font-weight: 600; font-size: var(--text-base, 1rem); color: var(--text-primary, #fff); list-style: none; transition: color 0.2s; user-select: none;">
+                        <span>What tools do you use?</span>
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="min-width: 20px; transition: transform 0.3s ease;">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </summary>
+                    <div style="padding: 0 var(--space-6, 1.5rem) var(--space-5, 1.25rem); color: var(--text-muted, #888); font-size: var(--text-sm, 0.875rem); line-height: 1.7;">
+                        <p style="margin: 0;">My primary tools include <strong style="color: var(--text-primary, #fff);">Figma</strong> for UI design, prototyping, and design systems. For research and planning, I use <strong style="color: var(--text-primary, #fff);">Miro</strong> and <strong style="color: var(--text-primary, #fff);">Notion</strong>. I create high-fidelity prototypes in <strong style="color: var(--text-primary, #fff);">Framer</strong> and use <strong style="color: var(--text-primary, #fff);">Principle</strong> for advanced micro-interactions. For visual design and assets, I use <strong style="color: var(--text-primary, #fff);">Adobe Illustrator</strong> and <strong style="color: var(--text-primary, #fff);">Photoshop</strong>. I'm always exploring new tools and happy to adapt to your team's stack.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- CTA SECTION                                   -->
+    <!-- ============================================= -->
+    <section class="section" style="padding-top: var(--space-16, 4rem); padding-bottom: var(--space-16, 4rem);">
+        <div class="container" style="max-width: var(--container-narrow, 800px); margin: 0 auto; text-align: center;">
+            <div class="reveal">
+                <p class="section-subtitle">Ready to Start?</p>
+                <h2 class="section-title" style="font-size: var(--text-4xl, 2.25rem);">Let's Build Something <span class="gradient-text">Beautiful</span></h2>
+                <p class="section-description" style="margin: var(--space-4, 1rem) auto var(--space-8, 2rem);">Whether you have a fully scoped brief or just an early idea, I'm here to help you bring it to life with thoughtful, user-centered design.</p>
+                <div class="btn-group" style="justify-content: center; display: flex; gap: var(--space-4, 1rem); flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Start a Project</a>
+                    <a href="about.html" class="btn btn-secondary btn-lg">Learn About Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- FOOTER                                        -->
+    <!-- ============================================= -->
+    <footer class="footer" role="contentinfo">
+        <div class="container" style="max-width: var(--container-max, 1200px); margin: 0 auto;">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo" aria-label="Stackly - Home"><img src="images/Stackly_logo.png" class="site-logo" alt="Stackly"></a>
+                    <p class="footer-description">UI/UX Designer crafting thoughtful digital experiences from Bangalore, India. Always open to new collaborations.</p>
+                    <div class="footer-social">
+                        <a href="https://dribbble.com/arjunmehta" class="footer-social-link" aria-label="Dribbble" title="Dribbble" target="_blank" rel="noopener noreferrer">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72"/><path d="M19.13 5.09c-3.61 2.46-7.26 3.54-12.13 3.21"/><path d="M2.34 14.6c5.39-.34 9.39-.56 14.66-3.72"/></svg>
+                        </a>
+                        <a href="https://behance.net/arjunmehta" class="footer-social-link" aria-label="Behance" title="Behance" target="_blank" rel="noopener noreferrer">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12.5h6.5c2.5 0 4-1.5 4-3.5s-1.5-3.5-4-3.5H1v10.5h7c2.5 0 4.5-1.5 4.5-4s-2-4-4.5-4"/><path d="M15 13h7.5c1.5 0 2.5-1 2.5-2.5S24 8 22.5 8H15v5zm0 0v5.5h7c1.5 0 2.5-1 2.5-2.5S23.5 13 22 13"/><line x1="15" y1="6" x2="23" y2="6"/></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/arjunmehta" class="footer-social-link" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="https://twitter.com/arjunmehta" class="footer-social-link" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener noreferrer">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-column-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="skills.html" class="footer-link">Skills</a></li>
+                        <li><a href="projects.html" class="footer-link">Projects</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-column-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html" class="footer-link">UI Design</a></li>
+                        <li><a href="services.html" class="footer-link">UX Research</a></li>
+                        <li><a href="services.html" class="footer-link">Prototyping</a></li>
+                        <li><a href="services.html" class="footer-link">Design Systems</a></li>
+                        <li><a href="services.html" class="footer-link">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-column-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:arjun@designmail.com" class="footer-link">arjun@designmail.com</a></li>
+                        <li><a href="tel:+919876543210" class="footer-link">+91 98765 43210</a></li>
+                        <li><span class="footer-link" style="cursor: default;">Bangalore, India</span></li>
+                        <li><a href="https://linkedin.com/in/arjunmehta" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://dribbble.com/arjunmehta" class="footer-link" target="_blank" rel="noopener noreferrer">Dribbble</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 <a href="index.html">Stackly</a>. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Service</a>
+                    <a href="#" class="footer-bottom-link">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- SCRIPTS                                       -->
+    <!-- ============================================= -->
+    <script src="js/script.js"></script>
+    <script src="js/animations.js"></script>
+
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        details[open] summary .faq-chevron {
+            transform: rotate(180deg);
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        details summary::marker {
+            display: none;
+            content: '';
+        }
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--color-primary-light, #a78bfa) !important;
+            box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb, 139, 92, 246), 0.15) !important;
+        }
+        .skill-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        .skill-card[style*="background: var(--gradient-primary"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
+        }
+        .contact-layout-grid {
+            display: grid;
+        }
+        @media (max-width: 768px) {
+            .contact-layout-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .form-row-contact {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+
+</body>
+</html>

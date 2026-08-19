@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the portfolio projects of Arjun Mehta — a premium UI/UX Designer specializing in mobile apps, web platforms, and dashboards.">
+  <meta name="keywords" content="Arjun Mehta, UI/UX Designer, Portfolio, Projects, Mobile Design, Web Design, Dashboard Design">
+  <meta name="author" content="Arjun Mehta">
+  <title>Projects — Arjun Mehta | UI/UX Designer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ============================================
+       PROJECTS PAGE - Hero Banner
+       ============================================ */
+    .page-hero {
+      min-height: 40vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--navbar-height) + var(--space-16)) var(--space-8) var(--space-12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(var(--color-primary-rgb), 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-hero-bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(var(--color-primary-rgb), 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(var(--color-primary-rgb), 0.04) 1px, transparent 1px);
+      background-size: 50px 50px;
+      mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      margin-bottom: var(--space-6);
+      position: relative;
+      z-index: 1;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+    }
+
+    .breadcrumb a:hover {
+      color: var(--color-primary-light);
+    }
+
+    .breadcrumb-separator {
+      color: var(--text-dim);
+      font-size: var(--text-xs);
+    }
+
+    .breadcrumb-current {
+      color: var(--color-primary-light);
+      font-weight: 600;
+    }
+
+    .page-hero-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-5xl);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: var(--space-4);
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-hero-subtitle {
+      font-size: var(--text-lg);
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-hero-line {
+      width: 60px;
+      height: 4px;
+      background: var(--gradient-primary);
+      border-radius: var(--radius-full);
+      margin: var(--space-8) auto 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ============================================
+       PROJECTS PAGE - Filter Bar
+       ============================================ */
+    .projects-filter-bar {
+      padding: 0 var(--space-8);
+      margin-top: calc(-1 * var(--space-8));
+      position: relative;
+      z-index: 2;
+    }
+
+    .projects-filter-bar .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .projects-filter-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      padding: var(--space-4) var(--space-6);
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--bg-glass-border);
+      border-radius: var(--radius-full);
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: var(--space-2) var(--space-6);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--text-muted);
+      border-radius: var(--radius-full);
+      border: 1px solid transparent;
+      transition: all var(--transition-base);
+      cursor: pointer;
+    }
+
+    .filter-btn:hover {
+      color: var(--text-primary);
+      background: var(--bg-card-hover);
+    }
+
+    .filter-btn.active {
+      color: var(--text-primary);
+      background: rgba(var(--color-primary-rgb), 0.15);
+      border-color: rgba(var(--color-primary-rgb), 0.3);
+      font-weight: 600;
+    }
+
+    /* ============================================
+       PROJECTS PAGE - Grid Section
+       ============================================ */
+    .projects-page-section {
+      padding: var(--space-16) var(--space-8) var(--space-24);
+    }
+
+    .projects-page-section .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .projects-page-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: var(--space-8);
+    }
+
+    .project-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--bg-glass-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: transform var(--transition-slow), box-shadow var(--transition-slow), border-color var(--transition-slow);
+      position: relative;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(var(--color-primary-rgb), 0.2);
+    }
+
+    .project-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+    }
+
+    .project-image > img {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .project-card:hover .project-image > img {
+      transform: scale(1.08);
+    }
+
+    .project-image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-5xl);
+      opacity: 0.4;
+      transition: transform var(--transition-slow);
+      position: relative;
+      z-index: 0;
+    }
+
+    .projects-page-grid .project-image-placeholder {
+      opacity: 0;
+    }
+
+    .project-card:hover .project-image-placeholder {
+      transform: scale(1.08);
+    }
+
+    .gradient-placeholder-1 {
+      background: linear-gradient(135deg, #7c3aed, #3b82f6, #06b6d4);
+    }
+
+    .gradient-placeholder-2 {
+      background: linear-gradient(135deg, #3b82f6, #06b6d4, #10b981);
+    }
+
+    .gradient-placeholder-3 {
+      background: linear-gradient(135deg, #ec4899, #7c3aed, #3b82f6);
+    }
+
+    .gradient-placeholder-4 {
+      background: linear-gradient(135deg, #f97316, #ec4899, #7c3aed);
+    }
+
+    .gradient-placeholder-5 {
+      background: linear-gradient(135deg, #06b6d4, #3b82f6, #7c3aed);
+    }
+
+    .gradient-placeholder-6 {
+      background: linear-gradient(135deg, #10b981, #06b6d4, #3b82f6);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 10, 26, 0.9) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      padding: var(--space-6);
+      opacity: 0;
+      transition: opacity var(--transition-slow);
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-overlay-content {
+      display: flex;
+      gap: var(--space-3);
+    }
+
+    .project-overlay-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--bg-glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      font-size: var(--text-lg);
+      transition: background var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .project-overlay-btn:hover {
+      background: rgba(var(--color-primary-rgb), 0.3);
+      transform: scale(1.1);
+    }
+
+    .project-info {
+      padding: var(--space-6) var(--space-6) var(--space-8);
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--space-3);
+    }
+
+    .project-category {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-primary-light);
+    }
+
+    .project-year {
+      font-size: var(--text-xs);
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .project-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      margin-bottom: var(--space-3);
+      transition: color var(--transition-fast);
+      line-height: 1.3;
+    }
+
+    .project-card:hover .project-title {
+      color: var(--color-primary-light);
+    }
+
+    .project-description {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: var(--space-5);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-6);
+    }
+
+    .project-tag {
+      padding: var(--space-1) var(--space-3);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      color: var(--text-muted);
+      background: rgba(var(--color-primary-rgb), 0.08);
+      border: 1px solid rgba(var(--color-primary-rgb), 0.12);
+      border-radius: var(--radius-full);
+      transition: background var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .project-card:hover .project-tag {
+      background: rgba(var(--color-primary-rgb), 0.12);
+      border-color: rgba(var(--color-primary-rgb), 0.2);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-primary-light);
+      transition: gap var(--transition-fast);
+    }
+
+    .project-link:hover {
+      gap: var(--space-3);
+    }
+
+    .project-link-arrow {
+      transition: transform var(--transition-fast);
+      display: inline-block;
+    }
+
+    .project-link:hover .project-link-arrow {
+      transform: translateX(4px);
+    }
+
+    /* ============================================
+       PROJECTS PAGE - CTA Section
+       ============================================ */
+    .cta-section {
+      padding: var(--space-24) var(--space-8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(var(--color-primary-rgb), 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-card {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--space-16) var(--space-12);
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--bg-glass-border);
+      border-radius: var(--radius-2xl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-card::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: var(--radius-2xl);
+      padding: 1px;
+      background: var(--gradient-primary);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .cta-glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      filter: blur(120px);
+      opacity: 0.08;
+      top: -100px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    .cta-glow-2 {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: var(--color-secondary);
+      filter: blur(120px);
+      opacity: 0.06;
+      bottom: -80px;
+      left: -80px;
+      pointer-events: none;
+    }
+
+    .cta-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-3xl);
+      color: white;
+      margin: 0 auto var(--space-8);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-4xl);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-4);
+      position: relative;
+      z-index: 1;
+      line-height: 1.15;
+    }
+
+    .cta-description {
+      font-size: var(--text-lg);
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto var(--space-8);
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ============================================
+       RESPONSIVE - Projects Page
+       ============================================ */
+    @media (max-width: 768px) {
+      .page-hero {
+        min-height: 30vh;
+        padding-top: calc(var(--navbar-height) + var(--space-10));
+      }
+
+      .projects-page-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-filter-inner {
+        padding: var(--space-3) var(--space-4);
+        gap: var(--space-2);
+      }
+
+      .cta-card {
+        padding: var(--space-10) var(--space-6);
+      }
+
+      .cta-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .cta-actions .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .filter-btn {
+        padding: var(--space-2) var(--space-4);
+        font-size: var(--text-xs);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       LOADING SCREEN
+       ========================================== -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-pulse"></div>
+    <div class="loading-spinner"></div>
+    <p class="loading-text">Arjun Mehta</p>
+    <div class="loading-bar">
+      <div class="loading-bar-inner"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       PAGE TRANSITION
+       ========================================== -->
+  <div class="page-transition" id="pageTransition">
+    <div class="page-transition-bar"></div>
+    <div class="page-transition-bar"></div>
+    <div class="page-transition-bar"></div>
+    <div class="page-transition-bar"></div>
+    <div class="page-transition-bar"></div>
+  </div>
+
+  <!-- Animated Background -->
+  <div class="animated-bg" aria-hidden="true">
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+    <div class="floating-particles">
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+    </div>
+    <div class="grid-pattern"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar" aria-label="Main Navigation">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Arjun Mehta - Home">
+        <img src="images/Stackly_logo.png" class="site-logo" alt="Stackly">
+      </a>
+      <ul class="nav-menu" id="navMenu" role="menubar">
+        <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+        <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="skills.html" class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="projects.html" class="nav-link active" role="menuitem">Projects</a></li>
+        <li role="none"><a href="services.html" class="nav-link" role="menuitem">Services</a></li>
+        <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+        <li role="none"><a href="login.html" class="nav-link" role="menuitem">Login</a></li>
+        <li role="none"><a href="#" class="btn btn-primary nav-btn" role="menuitem" data-action="download-resume">Resume ↓</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="nav-mobile-overlay" id="mobileNav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="index.html#about" class="nav-link">About</a>
+    <a href="projects.html" class="nav-link active">Projects</a>
+    <a href="index.html#services" class="nav-link">Services</a>
+    <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+    <a href="index.html#contact" class="nav-link">Contact</a>
+  </div>
+
+  <!-- ==========================================
+       PAGE HERO BANNER
+       ========================================== -->
+  <section class="page-hero">
+    <div class="page-hero-bg-grid"></div>
+    <nav class="breadcrumb reveal">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-separator">&#8250;</span>
+      <span class="breadcrumb-current">Projects</span>
+    </nav>
+    <h1 class="page-hero-title reveal delay-1">
+      My <span class="gradient-text">Projects</span>
+    </h1>
+    <p class="page-hero-subtitle reveal delay-2">
+      A curated collection of design work spanning mobile applications, web platforms, and data-driven dashboards — each crafted with purpose and precision.
+    </p>
+    <div class="page-hero-line reveal delay-3"></div>
+  </section>
+
+  <!-- ==========================================
+       FILTER SECTION
+       ========================================== -->
+  <div class="projects-filter-bar">
+    <div class="container">
+      <div class="projects-filter-inner reveal delay-2">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       PROJECTS GRID
+       ========================================== -->
+  <section class="projects-page-section">
+    <div class="container">
+      <div class="projects-page-grid">
+
+        <!-- Project 1: FinTech Mobile Banking App -->
+        <div class="project-card reveal delay-1" data-category="mobile">
+          <div class="project-image">
+            <img src="images/project-fintech.svg" alt="FinTech mobile banking app preview" loading="lazy">
+            <div class="project-image-placeholder gradient-placeholder-1">
+              &#128179;
+            </div>
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="case-study.html" class="project-overlay-btn" title="View Case Study">&#8599;</a>
+                <button class="project-overlay-btn" title="Quick Preview">&#9673;</button>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-category">Mobile</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-title">FinTech Mobile Banking App</h3>
+            <p class="project-description">A modern banking app designed to simplify financial management for millennials. Features intuitive money tracking, smart budgeting tools, and seamless peer-to-peer transfers with biometric security.</p>
+            <div class="project-tags">
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Prototyping</span>
+              <span class="project-tag">User Research</span>
+              <span class="project-tag">iOS</span>
+            </div>
+            <a href="case-study.html" class="project-link">
+              View Case Study <span class="project-link-arrow">&#8594;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: E-Commerce Website -->
+        <div class="project-card reveal delay-2" data-category="web">
+          <div class="project-image">
+            <img src="images/project-ecommerce.svg" alt="E-commerce website preview" loading="lazy">
+            <div class="project-image-placeholder gradient-placeholder-2">
+              &#128722;
+            </div>
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="case-study.html" class="project-overlay-btn" title="View Case Study">&#8599;</a>
+                <button class="project-overlay-btn" title="Quick Preview">&#9673;</button>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-category">Web</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-title">E-Commerce Website</h3>
+            <p class="project-description">Complete redesign of an e-commerce platform focusing on conversion optimization. Streamlined checkout flow, personalized product recommendations, and a visually immersive shopping experience.</p>
+            <div class="project-tags">
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Design System</span>
+              <span class="project-tag">A/B Testing</span>
+              <span class="project-tag">Responsive</span>
+            </div>
+            <a href="case-study.html" class="project-link">
+              View Case Study <span class="project-link-arrow">&#8594;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Healthcare Mobile App -->
+        <div class="project-card reveal delay-3" data-category="mobile">
+          <div class="project-image">
+            <img src="images/project-healthcare.svg" alt="Healthcare mobile app preview" loading="lazy">
+            <div class="project-image-placeholder gradient-placeholder-3">
+              &#129657;
+            </div>
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="case-study.html" class="project-overlay-btn" title="View Case Study">&#8599;</a>
+                <button class="project-overlay-btn" title="Quick Preview">&#9673;</button>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-category">Mobile</span>
+              <span class="project-year">2024</span>
+            </div>
+            <h3 class="project-title">Healthcare Mobile App</h3>
+            <p class="project-description">A telemedicine app connecting patients with healthcare providers. Designed appointment scheduling, video consultations, prescription management, and health record access with accessibility-first approach.</p>
+            <div class="project-tags">
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Healthcare UX</span>
+              <span class="project-tag">Accessibility</span>
+              <span class="project-tag">Android</span>
+            </div>
+            <a href="case-study.html" class="project-link">
+              View Case Study <span class="project-link-arrow">&#8594;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Food Delivery Application -->
+        <div class="project-card reveal delay-4" data-category="mobile">
+          <div class="project-image">
+            <img src="images/project-healthcare.svg" alt="Food delivery application preview" loading="lazy">
+            <div class="project-image-placeholder gradient-placeholder-4">
+              &#127828;
+            </div>
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="case-study.html" class="project-overlay-btn" title="View Case Study">&#8599;</a>
+                <button class="project-overlay-btn" title="Quick Preview">&#9673;</button>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-category">Mobile</span>
+              <span class="project-year">2024</span>
+            </div>
+            <h3 class="project-title">Food Delivery Application</h3>
+            <p class="project-description">End-to-end design for a food delivery platform featuring real-time order tracking, AI-powered restaurant suggestions, group ordering capabilities, and an engaging loyalty rewards system.</p>
+            <div class="project-tags">
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Motion Design</span>
+              <span class="project-tag">User Testing</span>
+              <span class="project-tag">Cross-Platform</span>
+            </div>
+            <a href="case-study.html" class="project-link">
+              View Case Study <span class="project-link-arrow">&#8594;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5: Travel Booking Platform -->
+        <div class="project-card reveal delay-5" data-category="web">
+          <div class="project-image">
+            <img src="images/project-ecommerce.svg" alt="Travel booking platform preview" loading="lazy">
+            <div class="project-image-placeholder gradient-placeholder-5">
+              &#9992;&#65039;
+            </div>
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="case-study.html" class="project-overlay-btn" title="View Case Study">&#8599;</a>
+                <button class="project-overlay-btn" title="Quick Preview">&#9673;</button>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-category">Web</span>
+              <span class="project-year">2024</span>
+            </div>
+            <h3 class="project-title">Travel Booking Platform</h3>
+            <p class="project-description">A comprehensive travel booking experience with interactive destination maps, flexible date search, itinerary builder, and integrated travel insurance — designed for effortless trip planning.</p>
+            <div class="project-tags">
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Information Architecture</span>
+              <span class="project-tag">Prototyping</span>
+              <span class="project-tag">Web App</span>
+            </div>
+            <a href="case-study.html" class="project-link">
+              View Case Study <span class="project-link-arrow">&#8594;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6: SaaS Analytics Dashboard -->
+        <div class="project-card reveal delay-6" data-category="dashboard">
+          <div class="project-image">
+            <img src="images/project-dashboard.svg" alt="SaaS analytics dashboard preview" loading="lazy">
+            <div class="project-image-placeholder gradient-placeholder-6">
+              &#128200;
+            </div>
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="case-study.html" class="project-overlay-btn" title="View Case Study">&#8599;</a>
+                <button class="project-overlay-btn" title="Quick Preview">&#9673;</button>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-category">Dashboard</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-title">SaaS Analytics Dashboard</h3>
+            <p class="project-description">Data-rich dashboard designed for SaaS metrics monitoring. Features customizable widget layouts, real-time data visualization, cohort analysis, and automated reporting with exportable insights.</p>
+            <div class="project-tags">
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Data Visualization</span>
+              <span class="project-tag">Design System</span>
+              <span class="project-tag">Enterprise</span>
+            </div>
+            <a href="case-study.html" class="project-link">
+              View Case Study <span class="project-link-arrow">&#8594;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CTA SECTION
+       ========================================== -->
+  <section class="cta-section">
+    <div class="cta-card reveal-scale">
+      <div class="cta-glow"></div>
+      <div class="cta-glow-2"></div>
+      <div class="cta-icon">&#128640;</div>
+      <h2 class="cta-title">
+        Have a project in <span class="gradient-text">mind</span>?
+      </h2>
+      <p class="cta-description">
+        I'm always excited to collaborate on innovative projects that push creative boundaries. Let's transform your vision into an exceptional digital experience.
+      </p>
+      <div class="cta-actions">
+        <a href="index.html#contact" class="btn btn-primary btn-lg">Start a Conversation</a>
+        <a href="index.html" class="btn btn-secondary btn-lg">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo"><img src="images/Stackly_logo.png" class="site-logo" alt="Stackly"></a>
+          <p class="footer-description">
+            UI/UX Designer crafting meaningful digital experiences. Passionate about design systems, interaction design, and building products people love.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="Dribbble">&#127912;</a>
+            <a href="#" class="footer-social-link" aria-label="Behance">&#9883;</a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">&#128279;</a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">&#128038;</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="index.html#about" class="footer-link">About</a></li>
+            <li><a href="projects.html" class="footer-link">Projects</a></li>
+            <li><a href="index.html#services" class="footer-link">Services</a></li>
+            <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#services" class="footer-link">UI Design</a></li>
+            <li><a href="index.html#services" class="footer-link">UX Research</a></li>
+            <li><a href="index.html#services" class="footer-link">Prototyping</a></li>
+            <li><a href="index.html#services" class="footer-link">Design Systems</a></li>
+            <li><a href="index.html#services" class="footer-link">Mobile Apps</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@arjunmehta.design" class="footer-link">hello@arjunmehta.design</a></li>
+            <li><a href="tel:+919876543210" class="footer-link">+91 98765 43210</a></li>
+            <li><a href="#" class="footer-link">Bangalore, India</a></li>
+            <li><a href="https://calendly.com" class="footer-link" target="_blank" rel="noopener">Schedule a Call</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+          <p class="footer-copyright">&copy; 2025 <a href="index.html">Stackly</a>. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          <a href="#" class="footer-bottom-link">Terms of Service</a>
+          <a href="#" class="footer-bottom-link">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       TOAST CONTAINER
+       ========================================== -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ==========================================
+       SCRIPTS
+       ========================================== -->
+  <script src="js/script.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

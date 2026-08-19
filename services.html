@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services — Arjun Mehta | UI/UX Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* ============================================
+           SERVICES PAGE - Hero Banner
+           ============================================ */
+        .page-hero {
+            min-height: 40vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: calc(var(--navbar-height) + var(--space-16)) var(--space-8) var(--space-12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(var(--color-primary-rgb), 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .page-hero-bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(var(--color-primary-rgb), 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(var(--color-primary-rgb), 0.04) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            margin-bottom: var(--space-6);
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb a {
+            color: var(--text-muted);
+            transition: color var(--transition-fast);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--color-primary-light);
+        }
+
+        .breadcrumb-separator {
+            color: var(--text-dim);
+            font-size: var(--text-xs);
+        }
+
+        .breadcrumb-current {
+            color: var(--color-primary-light);
+            font-weight: 600;
+        }
+
+        .page-hero-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-5xl);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: var(--space-4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero-subtitle {
+            font-size: var(--text-lg);
+            color: var(--text-muted);
+            max-width: 560px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero-line {
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            margin: var(--space-8) auto 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================
+           SERVICES PAGE - Services Grid
+           ============================================ */
+        .services-page-section {
+            padding: var(--space-20) var(--space-8) var(--space-24);
+        }
+
+        .services-page-section .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .services-page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .service-detail-card {
+            padding: var(--space-8);
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--bg-glass-border);
+            border-radius: var(--radius-xl);
+            transition: transform var(--transition-slow), border-color var(--transition-slow), box-shadow var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-detail-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-xl);
+            padding: 1px;
+            background: var(--gradient-primary);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity var(--transition-slow);
+            pointer-events: none;
+        }
+
+        .service-detail-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow-primary);
+        }
+
+        .service-detail-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-detail-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-2xl);
+            color: white;
+            margin-bottom: var(--space-6);
+            transition: transform var(--transition-spring);
+            flex-shrink: 0;
+        }
+
+        .service-detail-card:hover .service-detail-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-detail-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+        }
+
+        .service-detail-description {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: var(--space-5);
+        }
+
+        .service-detail-features {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+            margin-bottom: var(--space-6);
+            flex-grow: 1;
+        }
+
+        .service-detail-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+        }
+
+        .service-detail-feature-check {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(var(--color-success-rgb), 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--color-success);
+            font-size: var(--text-xs);
+        }
+
+        .service-detail-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: var(--space-5);
+            border-top: 1px solid var(--bg-glass-border);
+            margin-top: auto;
+        }
+
+        .service-detail-price-label {
+            font-size: var(--text-xs);
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+        }
+
+        .service-detail-price-value {
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-detail-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            width: 100%;
+            padding: var(--space-3) var(--space-6);
+            margin-top: var(--space-4);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--text-primary);
+            background: rgba(var(--color-primary-rgb), 0.12);
+            border: 1px solid rgba(var(--color-primary-rgb), 0.25);
+            border-radius: var(--radius-full);
+            transition: background var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .service-detail-btn:hover {
+            background: rgba(var(--color-primary-rgb), 0.25);
+            border-color: rgba(var(--color-primary-rgb), 0.4);
+            transform: translateY(-2px);
+        }
+
+        .service-detail-btn-arrow {
+            transition: transform var(--transition-fast);
+        }
+
+        .service-detail-btn:hover .service-detail-btn-arrow {
+            transform: translateX(4px);
+        }
+
+        /* ============================================
+           SERVICES PAGE - Process Section
+           ============================================ */
+        .process-section {
+            padding: var(--space-24) var(--space-8);
+            background: var(--bg-secondary);
+        }
+
+        .process-section .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-8);
+            position: relative;
+        }
+
+        .process-grid::before {
+            content: '';
+            position: absolute;
+            top: 44px;
+            left: 12.5%;
+            width: 75%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(var(--color-primary-rgb), 0.3), rgba(var(--color-secondary-rgb), 0.3), rgba(var(--color-accent-pink-rgb), 0.3), rgba(var(--color-accent-cyan-rgb), 0.3));
+            z-index: 0;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-step-number {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid var(--bg-glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-6);
+            font-family: var(--font-heading);
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .process-step-number::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            padding: 2px;
+            background: var(--gradient-primary);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .process-step-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+        }
+
+        .process-step-description {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            line-height: 1.8;
+            max-width: 240px;
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           SERVICES PAGE - CTA Section
+           ============================================ */
+        .cta-section {
+            padding: var(--space-24) var(--space-8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(var(--color-primary-rgb), 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-card {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-16) var(--space-12);
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--bg-glass-border);
+            border-radius: var(--radius-2xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: var(--radius-2xl);
+            padding: 1px;
+            background: var(--gradient-primary);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .cta-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            filter: blur(120px);
+            opacity: 0.08;
+            top: -100px;
+            right: -100px;
+            pointer-events: none;
+        }
+
+        .cta-glow-2 {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: var(--color-secondary);
+            filter: blur(120px);
+            opacity: 0.06;
+            bottom: -80px;
+            left: -80px;
+            pointer-events: none;
+        }
+
+        .cta-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-3xl);
+            color: white;
+            margin: 0 auto var(--space-8);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-family: var(--font-heading);
+            font-size: var(--text-4xl);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-4);
+            position: relative;
+            z-index: 1;
+            line-height: 1.15;
+        }
+
+        .cta-description {
+            font-size: var(--text-lg);
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 0 auto var(--space-8);
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================
+           RESPONSIVE - Services Page
+           ============================================ */
+        @media (max-width: 1024px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-10);
+            }
+
+            .process-grid::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                min-height: 30vh;
+                padding-top: calc(var(--navbar-height) + var(--space-10));
+            }
+
+            .services-page-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+
+            .cta-card {
+                padding: var(--space-10) var(--space-6);
+            }
+
+            .cta-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cta-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div class="animated-bg" aria-hidden="true">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+        <div class="bg-blob blob-3"></div>
+        <div class="floating-particles">
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+        </div>
+        <div class="grid-pattern"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo" aria-label="Arjun Mehta - Home">
+                <img src="images/Stackly_logo.png" class="site-logo" alt="Stackly">
+            </a>
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="skills.html" class="nav-link" role="menuitem">Skills</a></li>
+                <li role="none"><a href="projects.html" class="nav-link" role="menuitem">Projects</a></li>
+                <li role="none"><a href="services.html" class="nav-link active" role="menuitem">Services</a></li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+                <li role="none"><a href="login.html" class="nav-link" role="menuitem">Login</a></li>
+                <li role="none"><a href="#" class="btn btn-primary nav-btn" role="menuitem" data-action="download-resume">Resume ↓</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         PAGE HERO BANNER
+         ========================================== -->
+    <section class="page-hero">
+        <div class="page-hero-bg-grid"></div>
+        <nav class="breadcrumb reveal">
+            <a href="index.html">Home</a>
+            <span class="breadcrumb-separator">&#8250;</span>
+            <span class="breadcrumb-current">Services</span>
+        </nav>
+        <h1 class="page-hero-title reveal delay-1">
+            My <span class="gradient-text">Services</span>
+        </h1>
+        <p class="page-hero-subtitle reveal delay-2">
+            End-to-end design solutions tailored to your product goals — from early-stage research to polished, production-ready interfaces.
+        </p>
+        <div class="page-hero-line reveal delay-3"></div>
+    </section>
+
+    <!-- ==========================================
+         SERVICES GRID
+         ========================================== -->
+    <section class="services-page-section">
+        <div class="container">
+            <div class="services-page-grid">
+
+                <!-- Service 1: UX Research -->
+                <div class="service-detail-card reveal delay-1">
+                    <div class="service-detail-icon">&#128269;</div>
+                    <h3 class="service-detail-title">UX Research</h3>
+                    <p class="service-detail-description">Understanding user needs through interviews, surveys, analytics, and behavioral data to inform design decisions that truly resonate with your audience.</p>
+                    <div class="service-detail-features">
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>User Interviews & Surveys</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Persona & Journey Mapping</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Competitive Analysis</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Analytics & Data Insights</span>
+                        </div>
+                    </div>
+                    <div class="service-detail-price">
+                        <span class="service-detail-price-label">Starting at</span>
+                        <span class="service-detail-price-value">$800 — $2,500</span>
+                    </div>
+                    <a href="index.html#contact" class="service-detail-btn">
+                        Get Started <span class="service-detail-btn-arrow">&#8594;</span>
+                    </a>
+                </div>
+
+                <!-- Service 2: UI Design -->
+                <div class="service-detail-card reveal delay-2">
+                    <div class="service-detail-icon">&#127912;</div>
+                    <h3 class="service-detail-title">UI Design</h3>
+                    <p class="service-detail-description">Creating beautiful, intuitive interfaces with cohesive visual systems — from color palettes and typography to spacing and micro-interactions.</p>
+                    <div class="service-detail-features">
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Visual Design & Styling</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Icon & Illustration Sets</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Responsive Layouts</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Pixel-Perfect Delivery</span>
+                        </div>
+                    </div>
+                    <div class="service-detail-price">
+                        <span class="service-detail-price-label">Starting at</span>
+                        <span class="service-detail-price-value">$1,200 — $4,000</span>
+                    </div>
+                    <a href="index.html#contact" class="service-detail-btn">
+                        Get Started <span class="service-detail-btn-arrow">&#8594;</span>
+                    </a>
+                </div>
+
+                <!-- Service 3: Mobile App Design -->
+                <div class="service-detail-card reveal delay-3">
+                    <div class="service-detail-icon">&#128241;</div>
+                    <h3 class="service-detail-title">Mobile App Design</h3>
+                    <p class="service-detail-description">Native and cross-platform app design for iOS and Android — crafted for thumb-friendly navigation, platform conventions, and delightful user flows.</p>
+                    <div class="service-detail-features">
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>iOS & Android Guidelines</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Screen-by-Screen Flows</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Gesture & Interaction Design</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>App Store Assets</span>
+                        </div>
+                    </div>
+                    <div class="service-detail-price">
+                        <span class="service-detail-price-label">Starting at</span>
+                        <span class="service-detail-price-value">$2,000 — $6,000</span>
+                    </div>
+                    <a href="index.html#contact" class="service-detail-btn">
+                        Get Started <span class="service-detail-btn-arrow">&#8594;</span>
+                    </a>
+                </div>
+
+                <!-- Service 4: Web Design -->
+                <div class="service-detail-card reveal delay-4">
+                    <div class="service-detail-icon">&#127760;</div>
+                    <h3 class="service-detail-title">Web Design</h3>
+                    <p class="service-detail-description">Responsive website design and redesign — from landing pages and marketing sites to complex web applications, optimized for every screen size.</p>
+                    <div class="service-detail-features">
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Responsive Multi-Breakpoint</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Landing & Marketing Pages</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Web Application UI</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>SEO-Friendly Structure</span>
+                        </div>
+                    </div>
+                    <div class="service-detail-price">
+                        <span class="service-detail-price-label">Starting at</span>
+                        <span class="service-detail-price-value">$1,500 — $5,000</span>
+                    </div>
+                    <a href="index.html#contact" class="service-detail-btn">
+                        Get Started <span class="service-detail-btn-arrow">&#8594;</span>
+                    </a>
+                </div>
+
+                <!-- Service 5: Product Design -->
+                <div class="service-detail-card reveal delay-5">
+                    <div class="service-detail-icon">&#128230;</div>
+                    <h3 class="service-detail-title">Product Design</h3>
+                    <p class="service-detail-description">End-to-end product design from concept to launch — strategy, research, design, and iteration, ensuring every touchpoint aligns with user needs and business goals.</p>
+                    <div class="service-detail-features">
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Product Strategy & Vision</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Feature Prioritization</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>MVP Design & Iteration</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Post-Launch Optimization</span>
+                        </div>
+                    </div>
+                    <div class="service-detail-price">
+                        <span class="service-detail-price-label">Starting at</span>
+                        <span class="service-detail-price-value">$3,000 — $10,000</span>
+                    </div>
+                    <a href="index.html#contact" class="service-detail-btn">
+                        Get Started <span class="service-detail-btn-arrow">&#8594;</span>
+                    </a>
+                </div>
+
+                <!-- Service 6: Design Systems -->
+                <div class="service-detail-card reveal delay-6">
+                    <div class="service-detail-icon">&#128208;</div>
+                    <h3 class="service-detail-title">Design Systems</h3>
+                    <p class="service-detail-description">Scalable component libraries and design tokens that unify your product's visual language, speed up development, and ensure consistency across teams.</p>
+                    <div class="service-detail-features">
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Component Library (Figma)</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Design Tokens & Variables</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Documentation & Usage Guide</span>
+                        </div>
+                        <div class="service-detail-feature">
+                            <span class="service-detail-feature-check">&#10003;</span>
+                            <span>Developer Handoff Package</span>
+                        </div>
+                    </div>
+                    <div class="service-detail-price">
+                        <span class="service-detail-price-label">Starting at</span>
+                        <span class="service-detail-price-value">$2,500 — $8,000</span>
+                    </div>
+                    <a href="index.html#contact" class="service-detail-btn">
+                        Get Started <span class="service-detail-btn-arrow">&#8594;</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PROCESS SECTION
+         ========================================== -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-subtitle">How I Work</p>
+                <h2 class="section-title">My Design Process</h2>
+                <p class="section-description">A structured yet flexible approach that adapts to your project scope, timeline, and goals — delivering measurable results at every stage.</p>
+                <div class="section-line"></div>
+            </div>
+            <div class="process-grid">
+
+                <div class="process-step reveal delay-1">
+                    <div class="process-step-number">01</div>
+                    <h3 class="process-step-title">Discovery</h3>
+                    <p class="process-step-description">Deep-dive into your business goals, target users, market landscape, and existing pain points to define a clear problem statement and project scope.</p>
+                </div>
+
+                <div class="process-step reveal delay-2">
+                    <div class="process-step-number">02</div>
+                    <h3 class="process-step-title">Strategy</h3>
+                    <p class="process-step-description">Translate insights into actionable design strategy — information architecture, user flows, content hierarchy, and a roadmap aligned with your product vision.</p>
+                </div>
+
+                <div class="process-step reveal delay-3">
+                    <div class="process-step-number">03</div>
+                    <h3 class="process-step-title">Design</h3>
+                    <p class="process-step-description">Iterate from wireframes to polished UI, building interactive prototypes and refining every detail through user feedback and collaborative design reviews.</p>
+                </div>
+
+                <div class="process-step reveal delay-4">
+                    <div class="process-step-number">04</div>
+                    <h3 class="process-step-title">Delivery</h3>
+                    <p class="process-step-description">Hand off production-ready assets, specs, and documentation — plus post-launch support to ensure the design vision ships accurately and performs well.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CTA SECTION
+         ========================================== -->
+    <section class="cta-section">
+        <div class="cta-card reveal-scale">
+            <div class="cta-glow"></div>
+            <div class="cta-glow-2"></div>
+            <div class="cta-icon">&#128640;</div>
+            <h2 class="cta-title">
+                Ready to bring your <span class="gradient-text">vision</span> to life?
+            </h2>
+            <p class="cta-description">
+                Every great product starts with a conversation. Tell me about your project and I'll craft a tailored proposal that fits your goals, timeline, and budget.
+            </p>
+            <div class="cta-actions">
+                <a href="index.html#contact" class="btn btn-primary btn-lg">Get a Free Consultation</a>
+                <a href="index.html" class="btn btn-secondary btn-lg">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/Stackly_logo.png" class="site-logo" alt="Stackly"></a>
+                    <p class="footer-description">
+                        UI/UX Designer crafting meaningful digital experiences. Passionate about design systems, interaction design, and building products people love.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link" aria-label="Dribbble">&#127912;</a>
+                        <a href="#" class="footer-social-link" aria-label="Behance">&#9883;</a>
+                        <a href="#" class="footer-social-link" aria-label="LinkedIn">&#128279;</a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter">&#128038;</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-column-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="projects.html" class="footer-link">Projects</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-column-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html" class="footer-link">UI Design</a></li>
+                        <li><a href="services.html" class="footer-link">UX Research</a></li>
+                        <li><a href="services.html" class="footer-link">Prototyping</a></li>
+                        <li><a href="services.html" class="footer-link">Design Systems</a></li>
+                        <li><a href="services.html" class="footer-link">Mobile Apps</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-column-title">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@arjunmehta.design" class="footer-link">hello@arjunmehta.design</a></li>
+                        <li><a href="tel:+919876543210" class="footer-link">+91 98765 43210</a></li>
+                        <li><a href="#" class="footer-link">Bangalore, India</a></li>
+                        <li><a href="https://calendly.com" class="footer-link" target="_blank" rel="noopener">Schedule a Call</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 <a href="index.html">Stackly</a>. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Service</a>
+                    <a href="#" class="footer-bottom-link">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

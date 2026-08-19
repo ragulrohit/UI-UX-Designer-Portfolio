@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun Mehta — UI/UX Designer Portfolio</title>
+    <meta name="description" content="Professional UI/UX Designer creating meaningful digital experiences">
+    <meta name="keywords" content="UI/UX Designer, Product Designer, User Experience, Interface Design, Portfolio">
+    <meta name="author" content="Arjun Mehta">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- LOADING SCREEN                                -->
+    <!-- ============================================= -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- ANIMATED BACKGROUND                           -->
+    <!-- ============================================= -->
+    <div class="animated-bg" aria-hidden="true">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+        <div class="bg-blob blob-3"></div>
+        <div class="floating-particles">
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+        </div>
+        <div class="grid-pattern"></div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- PAGE TRANSITION OVERLAY                       -->
+    <!-- ============================================= -->
+    <div class="page-transition" id="pageTransition"></div>
+
+    <!-- ============================================= -->
+    <!-- NAVBAR                                        -->
+    <!-- ============================================= -->
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo" aria-label="Arjun Mehta - Home">
+                <img src="images/Stackly_logo.png" class="site-logo" alt="Stackly">
+            </a>
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link active" role="menuitem">Home</a></li>
+                <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="skills.html" class="nav-link" role="menuitem">Skills</a></li>
+                <li role="none"><a href="projects.html" class="nav-link" role="menuitem">Projects</a></li>
+                <li role="none"><a href="services.html" class="nav-link" role="menuitem">Services</a></li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+                <li role="none"><a href="login.html" class="nav-link" role="menuitem">Login</a></li>
+                <li role="none"><a href="#" class="btn btn-primary nav-btn" role="menuitem" data-action="download-resume">Resume ↓</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================= -->
+    <!-- MAIN CONTENT                                  -->
+    <!-- ============================================= -->
+    <main id="mainContent">
+
+        <!-- ========================================= -->
+        <!-- HERO SECTION                              -->
+        <!-- ========================================= -->
+        <section class="hero section" id="home" aria-label="Hero Section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge" data-animate="fade-up">
+                        <span class="pulse-dot"></span>
+                        UI/UX DESIGNER • PRODUCT DESIGNER
+                    </div>
+                    <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+                        Designing Digital<br>
+                        <span class="gradient-text">Experiences</span><br>
+                        That People Love
+                    </h1>
+                    <p class="hero-description" data-animate="fade-up" data-delay="200">
+                        I craft intuitive, user-centered digital products that bridge the gap between
+                        business goals and user needs. With a passion for clean aesthetics and seamless
+                        interactions, I transform complex problems into elegant solutions.
+                    </p>
+                    <div class="hero-buttons" data-animate="fade-up" data-delay="300">
+                        <a href="#projects" class="btn btn-primary btn-lg">
+                            View My Work
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline btn-lg">
+                            Let's Talk
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual" data-animate="fade-left" data-delay="200">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image" aria-label="Arjun Mehta profile image">
+                            <div class="designer-card-art" aria-hidden="true">
+                                <span class="art-kicker">PORTFOLIO / 2026</span>
+                                <strong>AM</strong>
+                                <span class="art-caption">Designing with<br>clarity &amp; purpose.</span>
+                                <div class="art-window"><i></i><i></i><i></i><b></b><em></em></div>
+                            </div>
+                        </div>
+                        <div class="hero-image-ring"></div>
+                    </div>
+                    <div class="hero-floating-card floating-card-1" data-animate="float">
+                        <span class="floating-icon">🔍</span>
+                        <span class="floating-label">UX Research</span>
+                    </div>
+                    <div class="hero-floating-card floating-card-2" data-animate="float">
+                        <span class="floating-icon">🎨</span>
+                        <span class="floating-label">UI Design</span>
+                    </div>
+                    <div class="hero-floating-card floating-card-3" data-animate="float">
+                        <span class="floating-icon">📐</span>
+                        <span class="floating-label">Wireframing</span>
+                    </div>
+                    <div class="hero-floating-card floating-card-4" data-animate="float">
+                        <span class="floating-icon">▶️</span>
+                        <span class="floating-label">Prototyping</span>
+                    </div>
+                    <div class="hero-floating-card floating-card-5" data-animate="float">
+                        <span class="floating-icon">🧩</span>
+                        <span class="floating-label">Design Systems</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator" aria-hidden="true">
+                <a href="#about" aria-label="Scroll to About section">
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                    <span class="scroll-text">Scroll Down</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- ABOUT SECTION                             -->
+        <!-- ========================================= -->
+        <section class="about section" id="about" aria-label="About Me">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-subtitle">Get To Know Me</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-image-col" data-animate="fade-right">
+                        <div class="about-image-container">
+                        <div class="about-image" aria-label="Arjun Mehta portrait">
+                                <div class="about-art" aria-hidden="true"><span>AM</span><small>UI / UX</small></div>
+                        </div>
+                            <div class="about-badge-experience">
+                                <span class="badge-number">5+</span>
+                                <span class="badge-text">Years</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content-col" data-animate="fade-left">
+                        <h3 class="about-heading">
+                            A passionate UI/UX Designer based in Bangalore, India
+                        </h3>
+                        <p class="about-text">
+                            Hello! I'm Arjun Mehta, a dedicated UI/UX Designer with over 5 years of experience
+                            crafting digital products that users love. My journey began with a curiosity about
+                            how people interact with technology, and it has evolved into a career focused on
+                            creating meaningful, user-centered experiences.
+                        </p>
+                        <p class="about-text">
+                            I specialize in understanding user behaviors, designing intuitive interfaces, and
+                            building scalable design systems. Every project I take on is driven by empathy,
+                            research, and a commitment to delivering solutions that not only look beautiful
+                            but solve real problems.
+                        </p>
+                        <blockquote class="about-quote">
+                            <p>"Design is not just what it looks like and feels like. Design is how it works."</p>
+                            <cite>— Steve Jobs</cite>
+                        </blockquote>
+                        <div class="about-stats">
+                            <div class="stat-item" data-animate="counter" data-count="5" data-suffix="+">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-item" data-animate="counter" data-count="50" data-suffix="+">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat-item" data-animate="counter" data-count="30" data-suffix="+">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Happy Clients</span>
+                            </div>
+                            <div class="stat-item" data-animate="counter" data-count="15" data-suffix="+">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Design Awards</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary" data-action="download-cv">
+                            Download CV
+                            <span class="btn-arrow">↓</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- SKILLS SECTION                            -->
+        <!-- ========================================= -->
+        <section class="skills section" id="skills" aria-label="My Skills">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-subtitle">What I Do Best</span>
+                    <h2 class="section-title">My Skills</h2>
+                </div>
+                <div class="skills-grid">
+
+                    <!-- Skill 1: UX Research -->
+                    <article class="skill-card" data-animate="fade-up" data-delay="0">
+                        <div class="skill-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="3"/>
+                                <line x1="29" y1="29" x2="40" y2="40" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="20" cy="20" r="5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">UX Research</h3>
+                        <p class="skill-description">
+                            Deep user research through interviews, surveys, and analytics to uncover
+                            insights that drive design decisions and improve user satisfaction.
+                        </p>
+                        <div class="skill-progress" data-width="85">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="85"></div>
+                            </div>
+                            <span class="progress-label">85%</span>
+                        </div>
+                    </article>
+
+                    <!-- Skill 2: UI Design -->
+                    <article class="skill-card" data-animate="fade-up" data-delay="100">
+                        <div class="skill-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <rect x="6" y="6" width="36" height="36" rx="6" stroke="currentColor" stroke-width="3"/>
+                                <circle cx="18" cy="18" r="4" fill="currentColor"/>
+                                <circle cx="30" cy="18" r="4" fill="currentColor"/>
+                                <circle cx="18" cy="30" r="4" fill="currentColor"/>
+                                <circle cx="30" cy="30" r="4" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">UI Design</h3>
+                        <p class="skill-description">
+                            Creating visually stunning interfaces with careful attention to typography,
+                            color theory, layout, and visual hierarchy that captivate users.
+                        </p>
+                        <div class="skill-progress" data-width="90">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="90"></div>
+                            </div>
+                            <span class="progress-label">90%</span>
+                        </div>
+                    </article>
+
+                    <!-- Skill 3: Wireframing -->
+                    <article class="skill-card" data-animate="fade-up" data-delay="200">
+                        <div class="skill-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <rect x="6" y="6" width="36" height="36" rx="3" stroke="currentColor" stroke-width="3"/>
+                                <line x1="6" y1="18" x2="42" y2="18" stroke="currentColor" stroke-width="2"/>
+                                <line x1="18" y1="18" x2="18" y2="42" stroke="currentColor" stroke-width="2"/>
+                                <line x1="6" y1="30" x2="18" y2="30" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Wireframing</h3>
+                        <p class="skill-description">
+                            Building low-fidelity wireframes and information architecture that establish
+                            clear structure and user flows before moving to visual design.
+                        </p>
+                        <div class="skill-progress" data-width="88">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="88"></div>
+                            </div>
+                            <span class="progress-label">88%</span>
+                        </div>
+                    </article>
+
+                    <!-- Skill 4: Prototyping -->
+                    <article class="skill-card" data-animate="fade-up" data-delay="300">
+                        <div class="skill-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="3"/>
+                                <polygon points="20,16 34,24 20,32" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Prototyping</h3>
+                        <p class="skill-description">
+                            Developing interactive, high-fidelity prototypes that bring designs to life
+                            and enable user testing before development begins.
+                        </p>
+                        <div class="skill-progress" data-width="82">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="82"></div>
+                            </div>
+                            <span class="progress-label">82%</span>
+                        </div>
+                    </article>
+
+                    <!-- Skill 5: Interaction Design -->
+                    <article class="skill-card" data-animate="fade-up" data-delay="0">
+                        <div class="skill-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <path d="M14 6 L14 36 L24 26 L34 40 L40 36 L30 22 L40 22 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Interaction Design</h3>
+                        <p class="skill-description">
+                            Designing meaningful micro-interactions, animations, and transitions that
+                            enhance usability and create delightful user experiences.
+                        </p>
+                        <div class="skill-progress" data-width="78">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="78"></div>
+                            </div>
+                            <span class="progress-label">78%</span>
+                        </div>
+                    </article>
+
+                    <!-- Skill 6: Design Systems -->
+                    <article class="skill-card" data-animate="fade-up" data-delay="100">
+                        <div class="skill-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <rect x="8" y="8" width="14" height="14" rx="2" stroke="currentColor" stroke-width="3"/>
+                                <rect x="26" y="8" width="14" height="14" rx="2" stroke="currentColor" stroke-width="3"/>
+                                <rect x="8" y="26" width="14" height="14" rx="2" stroke="currentColor" stroke-width="3"/>
+                                <rect x="26" y="26" width="14" height="14" rx="2" stroke="currentColor" stroke-width="3"/>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Design Systems</h3>
+                        <p class="skill-description">
+                            Building comprehensive, scalable design systems with reusable components,
+                            tokens, and guidelines that ensure consistency across products.
+                        </p>
+                        <div class="skill-progress" data-width="85">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="85"></div>
+                            </div>
+                            <span class="progress-label">85%</span>
+                        </div>
+                    </article>
+
+                    <!-- Skill 7: Usability Testing -->
+                    <article class="skill-card" data-animate="fade-up" data-delay="200">
+                        <div class="skill-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="3"/>
+                                <polyline points="14,24 21,31 34,18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Usability Testing</h3>
+                        <p class="skill-description">
+                            Conducting moderated and unmoderated usability tests to validate designs,
+                            identify pain points, and iterate based on real user feedback.
+                        </p>
+                        <div class="skill-progress" data-width="75">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="75"></div>
+                            </div>
+                            <span class="progress-label">75%</span>
+                        </div>
+                    </article>
+
+                    <!-- Skill 8: Product Design -->
+                    <article class="skill-card" data-animate="fade-up" data-delay="300">
+                        <div class="skill-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <rect x="10" y="14" width="28" height="24" rx="3" stroke="currentColor" stroke-width="3"/>
+                                <path d="M18 14 L18 10 L30 10 L30 14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                                <line x1="10" y1="22" x2="38" y2="22" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="24" cy="30" r="3" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Product Design</h3>
+                        <p class="skill-description">
+                            End-to-end product design from ideation and strategy through launch, combining
+                            business goals with user needs for impactful digital products.
+                        </p>
+                        <div class="skill-progress" data-width="80">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="80"></div>
+                            </div>
+                            <span class="progress-label">80%</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 7: Fitness & Wellness App -->
+                    <article class="project-card" data-category="mobile" data-animate="fade-up" data-delay="0">
+                        <div class="project-image" style="background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);">
+                            <img src="images/project-healthcare.svg" alt="Fitness and wellness mobile app project preview">
+                            <div class="project-overlay">
+                                <a href="case-study.html" class="btn btn-primary btn-sm" data-project="fitness">View Case Study â†’</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">Mobile App</span>
+                            <h3 class="project-title">Fitness &amp; Wellness App</h3>
+                            <p class="project-description">A motivating wellness experience that helps users build healthy habits through simple daily goals and progress tracking.</p>
+                            <div class="project-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">UX Strategy</span>
+                                <span class="tag">Mobile</span>
+                            </div>
+                            <a href="case-study.html" class="project-link" data-project="fitness">View Case Study <span class="link-arrow">â†’</span></a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- DESIGN TOOLS SECTION                      -->
+        <!-- ========================================= -->
+        <section class="tools section" id="tools" aria-label="Design Tools">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-subtitle">Tools I Use</span>
+                    <h2 class="section-title">Design Tools</h2>
+                </div>
+                <div class="tools-grid">
+
+                    <div class="tool-card" data-animate="fade-up" data-delay="0">
+                        <div class="tool-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                                <path d="M8 10 L20 4 L32 10 L32 22 L20 28 L8 22 Z" stroke="currentColor" stroke-width="2.5"/>
+                                <path d="M20 16 L20 28" stroke="currentColor" stroke-width="2.5"/>
+                                <circle cx="20" cy="12" r="2" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tool-name">Figma</span>
+                    </div>
+
+                    <div class="tool-card" data-animate="fade-up" data-delay="100">
+                        <div class="tool-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                                <polygon points="20,4 36,14 36,30 20,36 4,30 4,14" stroke="currentColor" stroke-width="2.5"/>
+                                <polygon points="20,12 28,17 28,27 20,32 12,27 12,17" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <span class="tool-name">Adobe XD</span>
+                    </div>
+
+                    <div class="tool-card" data-animate="fade-up" data-delay="200">
+                        <div class="tool-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                                <rect x="6" y="6" width="28" height="28" rx="4" stroke="currentColor" stroke-width="2.5"/>
+                                <circle cx="16" cy="16" r="3" fill="currentColor"/>
+                                <circle cx="26" cy="14" r="2" fill="currentColor"/>
+                                <path d="M6 28 L14 20 L20 24 L28 16 L34 22" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <span class="tool-name">Photoshop</span>
+                    </div>
+
+                    <div class="tool-card" data-animate="fade-up" data-delay="300">
+                        <div class="tool-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                                <path d="M10 30 Q6 30 6 26 L6 14 Q6 10 10 10 L16 10 L20 16 L16 16 Q14 16 14 18 L14 22 Q14 24 16 24 L24 24 Q26 24 26 22 L26 18 Q26 16 24 16 L20 16 L24 10 L30 10 Q34 10 34 14 L34 26 Q34 30 30 30 Z" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="tool-name">Illustrator</span>
+                    </div>
+
+                    <div class="tool-card" data-animate="fade-up" data-delay="0">
+                        <div class="tool-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                                <path d="M10 10 L20 4 L30 10 L30 28 L20 34 L10 28 Z" stroke="currentColor" stroke-width="2.5"/>
+                                <line x1="20" y1="4" x2="20" y2="34" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="20" cy="19" r="4" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <span class="tool-name">Framer</span>
+                    </div>
+
+                    <div class="tool-card" data-animate="fade-up" data-delay="100">
+                        <div class="tool-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                                <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="2.5"/>
+                                <circle cx="14" cy="16" r="3" fill="currentColor"/>
+                                <circle cx="26" cy="16" r="3" fill="currentColor"/>
+                                <circle cx="20" cy="26" r="3" fill="currentColor"/>
+                                <line x1="16" y1="17" x2="24" y2="17" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="15" y1="19" x2="19" y2="24" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="25" y1="19" x2="21" y2="24" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <span class="tool-name">Miro</span>
+                    </div>
+
+                    <div class="tool-card" data-animate="fade-up" data-delay="200">
+                        <div class="tool-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                                <path d="M10 8 C10 8 16 4 20 4 C24 4 30 8 30 8 L32 32 C32 34 30 36 28 36 L12 36 C10 36 8 34 8 32 Z" stroke="currentColor" stroke-width="2.5"/>
+                                <line x1="8" y1="14" x2="32" y2="14" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="20" cy="24" r="4" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <span class="tool-name">Sketch</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- PROJECTS SECTION                          -->
+        <!-- ========================================= -->
+        <section class="projects section" id="projects" aria-label="Featured Projects">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-subtitle">My Recent Work</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                </div>
+                <div class="project-filters" data-animate="fade-up">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+                </div>
+                <div class="projects-grid">
+
+                    <!-- Project 1: FinTech Mobile Banking App -->
+                    <article class="project-card" data-category="mobile" data-animate="fade-up" data-delay="0">
+                        <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <img src="images/project-fintech.svg" alt="FinTech mobile banking app project preview">
+                            <div class="project-image-placeholder">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                                    <rect x="18" y="8" width="28" height="48" rx="6" stroke="white" stroke-width="2.5"/>
+                                    <circle cx="32" cy="50" r="2" fill="white"/>
+                                    <rect x="24" y="16" width="16" height="8" rx="2" stroke="white" stroke-width="1.5"/>
+                                    <line x1="24" y1="30" x2="40" y2="30" stroke="white" stroke-width="1.5"/>
+                                    <line x1="24" y1="36" x2="36" y2="36" stroke="white" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="case-study.html" class="btn btn-primary btn-sm" data-project="fintech">View Case Study →</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">Mobile App</span>
+                            <h3 class="project-title">FinTech Mobile Banking App</h3>
+                            <p class="project-description">
+                                A modern banking experience redesigned for millennials, featuring seamless
+                                transfers, smart budgeting, and biometric authentication.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">Prototyping</span>
+                                <span class="tag">User Research</span>
+                            </div>
+                            <a href="case-study.html" class="project-link" data-project="fintech">
+                                View Case Study
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: E-Commerce Website -->
+                    <article class="project-card" data-category="web" data-animate="fade-up" data-delay="100">
+                        <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <img src="images/project-ecommerce.svg" alt="E-commerce website project preview">
+                            <div class="project-image-placeholder">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                                    <rect x="8" y="12" width="48" height="36" rx="4" stroke="white" stroke-width="2.5"/>
+                                    <line x1="8" y1="24" x2="56" y2="24" stroke="white" stroke-width="2"/>
+                                    <rect x="14" y="30" width="16" height="10" rx="2" stroke="white" stroke-width="1.5"/>
+                                    <rect x="34" y="30" width="16" height="4" rx="1" stroke="white" stroke-width="1.5"/>
+                                    <rect x="34" y="36" width="10" height="4" rx="1" stroke="white" stroke-width="1.5"/>
+                                    <line x1="12" y1="52" x2="52" y2="52" stroke="white" stroke-width="2.5"/>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="case-study.html" class="btn btn-primary btn-sm" data-project="ecommerce">View Case Study →</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">Web Design</span>
+                            <h3 class="project-title">E-Commerce Website</h3>
+                            <p class="project-description">
+                                A complete redesign of a fashion e-commerce platform, boosting conversions
+                                by 40% with improved navigation and checkout flow.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">Web Design</span>
+                                <span class="tag">E-Commerce</span>
+                            </div>
+                            <a href="case-study.html" class="project-link" data-project="ecommerce">
+                                View Case Study
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Healthcare Mobile App -->
+                    <article class="project-card" data-category="mobile" data-animate="fade-up" data-delay="200">
+                        <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <img src="images/project-healthcare.svg" alt="Healthcare mobile app project preview">
+                            <div class="project-image-placeholder">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                                    <rect x="18" y="8" width="28" height="48" rx="6" stroke="white" stroke-width="2.5"/>
+                                    <circle cx="32" cy="50" r="2" fill="white"/>
+                                    <path d="M28 26 L32 22 L36 26 L36 34 L28 34 Z" stroke="white" stroke-width="2"/>
+                                    <line x1="32" y1="28" x2="32" y2="32" stroke="white" stroke-width="1.5"/>
+                                    <line x1="30" y1="30" x2="34" y2="30" stroke="white" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="case-study.html" class="btn btn-primary btn-sm" data-project="healthcare">View Case Study →</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">Mobile App</span>
+                            <h3 class="project-title">Healthcare Mobile App</h3>
+                            <p class="project-description">
+                                A telemedicine app connecting patients with doctors, featuring video consultations,
+                                health records, and prescription management.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Adobe XD</span>
+                                <span class="tag">Healthcare</span>
+                                <span class="tag">Mobile</span>
+                            </div>
+                            <a href="case-study.html" class="project-link" data-project="healthcare">
+                                View Case Study
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Food Delivery Application -->
+                    <article class="project-card" data-category="mobile" data-animate="fade-up" data-delay="0">
+                        <div class="project-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            <img src="images/project-healthcare.svg" alt="Food delivery application project preview">
+                            <div class="project-image-placeholder">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                                    <rect x="18" y="8" width="28" height="48" rx="6" stroke="white" stroke-width="2.5"/>
+                                    <circle cx="32" cy="50" r="2" fill="white"/>
+                                    <circle cx="32" cy="24" r="8" stroke="white" stroke-width="2"/>
+                                    <path d="M29 24 L31 26 L35 22" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                    <line x1="24" y1="38" x2="40" y2="38" stroke="white" stroke-width="1.5"/>
+                                    <line x1="26" y1="42" x2="38" y2="42" stroke="white" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="case-study.html" class="btn btn-primary btn-sm" data-project="food">View Case Study →</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">Mobile App</span>
+                            <h3 class="project-title">Food Delivery Application</h3>
+                            <p class="project-description">
+                                An on-demand food delivery app with real-time tracking, personalized
+                                recommendations, and a seamless ordering experience.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">Prototyping</span>
+                                <span class="tag">Mobile</span>
+                            </div>
+                            <a href="case-study.html" class="project-link" data-project="food">
+                                View Case Study
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Travel Booking Platform -->
+                    <article class="project-card" data-category="web" data-animate="fade-up" data-delay="100">
+                        <div class="project-image" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
+                            <img src="images/project-ecommerce.svg" alt="Travel booking platform project preview">
+                            <div class="project-image-placeholder">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                                    <rect x="8" y="12" width="48" height="36" rx="4" stroke="white" stroke-width="2.5"/>
+                                    <line x1="8" y1="24" x2="56" y2="24" stroke="white" stroke-width="2"/>
+                                    <circle cx="20" cy="18" r="3" stroke="white" stroke-width="1.5"/>
+                                    <path d="M30 36 L38 30 L46 34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="14" y1="32" x2="26" y2="32" stroke="white" stroke-width="1.5"/>
+                                    <line x1="14" y1="36" x2="24" y2="36" stroke="white" stroke-width="1.5"/>
+                                    <line x1="14" y1="40" x2="22" y2="40" stroke="white" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="case-study.html" class="btn btn-primary btn-sm" data-project="travel">View Case Study →</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">Web Design</span>
+                            <h3 class="project-title">Travel Booking Platform</h3>
+                            <p class="project-description">
+                                A comprehensive travel booking platform with smart itinerary planning,
+                                price comparison, and seamless hotel and flight booking.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">Web Design</span>
+                                <span class="tag">UI Design</span>
+                            </div>
+                            <a href="case-study.html" class="project-link" data-project="travel">
+                                View Case Study
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: SaaS Analytics Dashboard -->
+                    <article class="project-card" data-category="dashboard" data-animate="fade-up" data-delay="200">
+                        <div class="project-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                            <img src="images/project-dashboard.svg" alt="SaaS analytics dashboard project preview">
+                            <div class="project-image-placeholder">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                                    <rect x="8" y="8" width="48" height="48" rx="4" stroke="white" stroke-width="2.5"/>
+                                    <rect x="14" y="30" width="8" height="18" rx="1" stroke="white" stroke-width="1.5"/>
+                                    <rect x="26" y="22" width="8" height="26" rx="1" stroke="white" stroke-width="1.5"/>
+                                    <rect x="38" y="16" width="8" height="32" rx="1" stroke="white" stroke-width="1.5"/>
+                                    <polyline points="18,28 30,18 42,24" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="case-study.html" class="btn btn-primary btn-sm" data-project="saas">View Case Study →</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">Dashboard</span>
+                            <h3 class="project-title">SaaS Analytics Dashboard</h3>
+                            <p class="project-description">
+                                A data-rich analytics dashboard for a SaaS platform, featuring real-time
+                                metrics, customizable widgets, and exportable reports.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">Dashboard</span>
+                                <span class="tag">Design System</span>
+                            </div>
+                            <a href="case-study.html" class="project-link" data-project="saas">
+                                View Case Study
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- SERVICES SECTION                          -->
+        <!-- ========================================= -->
+        <section class="services section" id="services" aria-label="My Services">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-subtitle">What I Offer</span>
+                    <h2 class="section-title">My Services</h2>
+                </div>
+                <div class="services-grid">
+
+                    <!-- Service 1: UX Research -->
+                    <article class="service-card" data-animate="fade-up" data-delay="0">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="2.5"/>
+                                <line x1="29" y1="29" x2="40" y2="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M16 20 L20 20 L22 16 L24 24 L26 18 L28 20 L32 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">UX Research</h3>
+                        <p class="service-description">
+                            Comprehensive user research including interviews, surveys, personas,
+                            journey mapping, and competitive analysis to inform design decisions.
+                        </p>
+                        <a href="#contact" class="service-link">Learn More →</a>
+                    </article>
+
+                    <!-- Service 2: UI Design -->
+                    <article class="service-card" data-animate="fade-up" data-delay="100">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2.5"/>
+                                <circle cx="18" cy="18" r="4" fill="currentColor" opacity="0.6"/>
+                                <circle cx="30" cy="18" r="4" fill="currentColor" opacity="0.8"/>
+                                <circle cx="18" cy="30" r="4" fill="currentColor" opacity="0.4"/>
+                                <circle cx="30" cy="30" r="4" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">UI Design</h3>
+                        <p class="service-description">
+                            Visually compelling interface design with pixel-perfect attention to detail,
+                            brand consistency, and modern aesthetic sensibility.
+                        </p>
+                        <a href="#contact" class="service-link">Learn More →</a>
+                    </article>
+
+                    <!-- Service 3: Mobile App Design -->
+                    <article class="service-card" data-animate="fade-up" data-delay="200">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <rect x="14" y="6" width="20" height="36" rx="4" stroke="currentColor" stroke-width="2.5"/>
+                                <line x1="14" y1="14" x2="34" y2="14" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="14" y1="32" x2="34" y2="32" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="24" cy="36" r="1.5" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Mobile App Design</h3>
+                        <p class="service-description">
+                            Native and cross-platform mobile app design for iOS and Android, optimized
+                            for touch interactions and mobile-first experiences.
+                        </p>
+                        <a href="#contact" class="service-link">Learn More →</a>
+                    </article>
+
+                    <!-- Service 4: Web Design -->
+                    <article class="service-card" data-animate="fade-up" data-delay="300">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <rect x="6" y="10" width="36" height="28" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                                <line x1="6" y1="18" x2="42" y2="18" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="14" r="1.5" fill="currentColor"/>
+                                <circle cx="17" cy="14" r="1.5" fill="currentColor"/>
+                                <circle cx="22" cy="14" r="1.5" fill="currentColor"/>
+                                <line x1="24" y1="42" x2="18" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="24" y1="42" x2="30" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="16" y1="42" x2="32" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Web Design</h3>
+                        <p class="service-description">
+                            Responsive, accessible, and performant website designs that deliver
+                            exceptional user experiences across all devices and browsers.
+                        </p>
+                        <a href="#contact" class="service-link">Learn More →</a>
+                    </article>
+
+                    <!-- Service 5: Product Design -->
+                    <article class="service-card" data-animate="fade-up" data-delay="0">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <path d="M12 8 L36 8 L40 20 L24 40 L8 20 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+                                <line x1="8" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="2"/>
+                                <line x1="24" y1="20" x2="24" y2="40" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Product Design</h3>
+                        <p class="service-description">
+                            End-to-end product strategy and design, from ideation and MVP planning
+                            to launch and iteration, aligned with business objectives.
+                        </p>
+                        <a href="#contact" class="service-link">Learn More →</a>
+                    </article>
+
+                    <!-- Service 6: Design Systems -->
+                    <article class="service-card" data-animate="fade-up" data-delay="100">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                <rect x="8" y="8" width="14" height="14" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                                <rect x="26" y="8" width="14" height="14" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                                <rect x="8" y="26" width="14" height="14" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                                <rect x="26" y="26" width="14" height="14" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                                <line x1="22" y1="15" x2="26" y2="15" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="22" y1="33" x2="26" y2="33" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="15" y1="22" x2="15" y2="26" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="33" y1="22" x2="33" y2="26" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Design Systems</h3>
+                        <p class="service-description">
+                            Scalable, component-based design systems with comprehensive documentation,
+                            design tokens, and guidelines for team collaboration.
+                        </p>
+                        <a href="#contact" class="service-link">Learn More →</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- EXPERIENCE TIMELINE SECTION               -->
+        <!-- ========================================= -->
+        <section class="experience section" id="experience" aria-label="My Experience">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-subtitle">My Journey</span>
+                    <h2 class="section-title">Experience</h2>
+                </div>
+                <div class="timeline">
+
+                    <!-- Timeline Item 1 -->
+                    <article class="timeline-item" data-animate="fade-up" data-delay="0">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026 — Present</div>
+                            <h3 class="timeline-title">Senior UI/UX Designer</h3>
+                            <h4 class="timeline-company">DesignCraft Studio</h4>
+                            <p class="timeline-description">
+                                Leading a team of 5 designers in creating enterprise-level SaaS products.
+                                Established a design system that improved design-to-development handoff
+                                efficiency by 60%. Mentoring junior designers and conducting design reviews.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Design Leadership</span>
+                                <span class="tag">Design Systems</span>
+                                <span class="tag">Team Management</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Timeline Item 2 -->
+                    <article class="timeline-item" data-animate="fade-up" data-delay="100">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025 — 2026</div>
+                            <h3 class="timeline-title">Product Designer</h3>
+                            <h4 class="timeline-company">TechVibe Solutions</h4>
+                            <p class="timeline-description">
+                                Designed end-to-end product experiences for B2B and B2C platforms. Conducted
+                                extensive user research leading to a 45% increase in user engagement.
+                                Collaborated closely with engineering and product teams in an agile environment.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Product Strategy</span>
+                                <span class="tag">User Research</span>
+                                <span class="tag">Agile</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Timeline Item 3 -->
+                    <article class="timeline-item" data-animate="fade-up" data-delay="200">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2024 — 2025</div>
+                            <h3 class="timeline-title">UI/UX Designer</h3>
+                            <h4 class="timeline-company">InnovateLab</h4>
+                            <p class="timeline-description">
+                                Created wireframes, prototypes, and high-fidelity designs for web and mobile
+                                applications. Led the redesign of a legacy platform resulting in a 35%
+                                improvement in user task completion rates.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">UI Design</span>
+                                <span class="tag">Prototyping</span>
+                                <span class="tag">UX Research</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Timeline Item 4 -->
+                    <article class="timeline-item" data-animate="fade-up" data-delay="300">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2023 — 2024</div>
+                            <h3 class="timeline-title">Design Intern</h3>
+                            <h4 class="timeline-company">CreativeHub</h4>
+                            <p class="timeline-description">
+                                Assisted the design team in creating visual assets, UI components, and
+                                interactive prototypes. Gained hands-on experience with Figma, user
+                                interviews, and design thinking workshops.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">Visual Design</span>
+                                <span class="tag">Design Thinking</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- TESTIMONIALS SECTION                      -->
+        <!-- ========================================= -->
+        <section class="testimonials section" id="testimonials" aria-label="Testimonials">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-subtitle">What Clients Say</span>
+                    <h2 class="section-title">Testimonials</h2>
+                </div>
+                <div class="testimonials-slider" data-animate="fade-up" role="region" aria-label="Client testimonials carousel">
+                    <div class="testimonials-track" id="testimonialsTrack">
+
+                        <!-- Testimonial 1 -->
+                        <article class="testimonial-card testimonial-slide" aria-label="Testimonial from Priya Sharma">
+                            <div class="testimonial-content">
+                                <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Arjun's design thinking transformed our product completely. His ability to
+                                    understand user needs and translate them into intuitive interfaces is remarkable.
+                                    The redesign increased our user retention by 50% within the first quarter."
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar" aria-hidden="true">
+                                        <span class="avatar-initials">PS</span>
+                                    </div>
+                                    <div class="author-info">
+                                        <h4 class="author-name">Priya Sharma</h4>
+                                        <span class="author-role">Product Manager at TechCorp</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Testimonial 2 -->
+                        <article class="testimonial-card testimonial-slide" aria-label="Testimonial from Rahul Verma">
+                            <div class="testimonial-content">
+                                <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Working with Arjun was an incredible experience. He brought a level of
+                                    professionalism and creativity that elevated our entire platform. His research-driven
+                                    approach ensured every design decision was backed by data and user insights."
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar" aria-hidden="true">
+                                        <span class="avatar-initials">RV</span>
+                                    </div>
+                                    <div class="author-info">
+                                        <h4 class="author-name">Rahul Verma</h4>
+                                        <span class="author-role">CEO at StartupXYZ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Testimonial 3 -->
+                        <article class="testimonial-card testimonial-slide" aria-label="Testimonial from Sarah Johnson">
+                            <div class="testimonial-content">
+                                <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                </div>
+                                <p class="testimonial-text">
+                                    "The attention to detail and user research that Arjun brings to every project
+                                    is outstanding. He doesn't just design interfaces — he crafts experiences.
+                                    Our conversion rate improved by 35% after the redesign he led."
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar" aria-hidden="true">
+                                        <span class="avatar-initials">SJ</span>
+                                    </div>
+                                    <div class="author-info">
+                                        <h4 class="author-name">Sarah Johnson</h4>
+                                        <span class="author-role">Marketing Director at GlobalTech</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Testimonial 4 -->
+                        <article class="testimonial-card testimonial-slide" aria-label="Testimonial from Amit Patel">
+                            <div class="testimonial-content">
+                                <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                    <span class="star" aria-hidden="true">★</span>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Arjun delivered exceptional designs that exceeded our expectations. His ability
+                                    to balance aesthetics with functionality is rare. The design system he created
+                                    has become the foundation of our entire product development process."
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar" aria-hidden="true">
+                                        <span class="avatar-initials">AP</span>
+                                    </div>
+                                    <div class="author-info">
+                                        <h4 class="author-name">Amit Patel</h4>
+                                        <span class="author-role">CTO at InnovateApp</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                    <div class="testimonial-controls">
+                        <button class="testimonial-btn testimonial-prev prev" id="testimonialPrev" aria-label="Previous testimonial">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <polyline points="15,18 9,12 15,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="testimonial-dots" id="testimonialDots" role="tablist" aria-label="Testimonial navigation">
+                            <button class="dot active" data-index="0" role="tab" aria-selected="true" aria-label="Testimonial 1"></button>
+                            <button class="dot" data-index="1" role="tab" aria-selected="false" aria-label="Testimonial 2"></button>
+                            <button class="dot" data-index="2" role="tab" aria-selected="false" aria-label="Testimonial 3"></button>
+                            <button class="dot" data-index="3" role="tab" aria-selected="false" aria-label="Testimonial 4"></button>
+                        </div>
+                        <button class="testimonial-btn testimonial-next next" id="testimonialNext" aria-label="Next testimonial">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <polyline points="9,6 15,12 9,18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================= -->
+    <!-- FOOTER                                        -->
+    <!-- ============================================= -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo" aria-label="Stackly - Home">
+                        <img src="images/Stackly_logo.png" class="site-logo" alt="Stackly">
+                    </a>
+                    <p class="footer-description">
+                        A passionate UI/UX Designer creating meaningful digital experiences that
+                        bridge the gap between business goals and user needs. Based in Bangalore, India.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/in/arjunmehta" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="2"/>
+                                <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        <a href="https://behance.net/arjunmehta" class="social-link" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M1 12.5h6.5c2.5 0 4-1.5 4-3.5s-1.5-3.5-4-3.5H1v10.5h7c2.5 0 4.5-1.5 4.5-4s-2-4-4.5-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M15 13h7.5c1.5 0 2.5-1 2.5-2.5S24 8 22.5 8H15v5zm0 0v5.5h7c1.5 0 2.5-1 2.5-2.5S23.5 13 22 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="15" y1="6" x2="23" y2="6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        <a href="https://dribbble.com/arjunmehta" class="social-link" aria-label="Dribbble" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72" stroke="currentColor" stroke-width="2"/>
+                                <path d="M19.13 5.09c-3.61 2.46-7.26 3.54-12.13 3.21" stroke="currentColor" stroke-width="2"/>
+                                <path d="M2.34 14.6c5.39-.34 9.39-.56 14.66-3.72" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/arjunmehta" class="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-list">
+                        <li><a href="services.html">UX Research</a></li>
+                        <li><a href="services.html">UI Design</a></li>
+                        <li><a href="services.html">Mobile App Design</a></li>
+                        <li><a href="services.html">Web Design</a></li>
+                        <li><a href="services.html">Product Design</a></li>
+                        <li><a href="services.html">Design Systems</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Connect</h4>
+                    <ul class="footer-list">
+                        <li><a href="https://linkedin.com/in/arjunmehta" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://behance.net/arjunmehta" target="_blank" rel="noopener noreferrer">Behance</a></li>
+                        <li><a href="https://dribbble.com/arjunmehta" target="_blank" rel="noopener noreferrer">Dribbble</a></li>
+                        <li><a href="https://twitter.com/arjunmehta" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                        <li><a href="mailto:arjun@designmail.com">Email Me</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 Stackly. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- TOAST CONTAINER                               -->
+    <!-- ============================================= -->
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- ============================================= -->
+    <!-- SCRIPTS                                       -->
+    <!-- ============================================= -->
+    <script src="js/script.js"></script>
+    <script src="js/animations.js"></script>
+
+</body>
+</html>
