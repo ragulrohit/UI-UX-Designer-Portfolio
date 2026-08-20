@@ -12,22 +12,18 @@
     const DOM = {
         loginForm: document.getElementById('loginForm'),
         emailInput: document.getElementById('email'),
+        roleInput: document.getElementById('role'),
         passwordInput: document.getElementById('password'),
         togglePassword: document.getElementById('togglePassword'),
         loginBtn: document.getElementById('loginBtn'),
         rememberMe: document.getElementById('rememberMe'),
         emailGroup: document.getElementById('emailGroup'),
+        roleGroup: document.getElementById('roleGroup'),
         passwordGroup: document.getElementById('passwordGroup'),
         toastContainer: document.getElementById('toastContainer'),
         successOverlay: document.getElementById('successOverlay'),
         loadingScreen: document.getElementById('loadingScreen'),
     };
-
-    /* --------------------------------------------------------------------------
-       Demo Credentials
-       -------------------------------------------------------------------------- */
-    const DEMO_EMAIL = 'admin@arjun.com';
-    const DEMO_PASSWORD = 'admin123';
 
     /* --------------------------------------------------------------------------
        Loading Screen
@@ -196,6 +192,7 @@
             e.preventDefault();
 
             var email = DOM.emailInput.value.trim();
+            var role = DOM.roleInput.value;
             var password = DOM.passwordInput.value;
             var hasError = false;
 
@@ -204,21 +201,22 @@
                 setError(DOM.emailGroup, 'Email address is required');
                 shakeElement(DOM.emailGroup);
                 hasError = true;
-            } else if (!isValidEmail(email)) {
-                setError(DOM.emailGroup, 'Please enter a valid email address');
-                shakeElement(DOM.emailGroup);
-                hasError = true;
             } else {
                 setValid(DOM.emailGroup);
+            }
+
+            /* Validate role */
+            if (role === '') {
+                setError(DOM.roleGroup, 'Please select your role');
+                shakeElement(DOM.roleGroup);
+                hasError = true;
+            } else {
+                setValid(DOM.roleGroup);
             }
 
             /* Validate password */
             if (password === '') {
                 setError(DOM.passwordGroup, 'Password is required');
-                shakeElement(DOM.passwordGroup);
-                hasError = true;
-            } else if (password.length < 6) {
-                setError(DOM.passwordGroup, 'Password must be at least 6 characters');
                 shakeElement(DOM.passwordGroup);
                 hasError = true;
             } else {
@@ -233,13 +231,9 @@
             /* Show loading state */
             setLoadingState(true);
 
-            /* Simulate authentication delay */
+            /* Simulate authentication delay for the front-end demo. */
             setTimeout(function () {
-                if (email === DEMO_EMAIL && password === DEMO_PASSWORD) {
-                    handleLoginSuccess();
-                } else {
-                    handleLoginFailure(email, password);
-                }
+                handleLoginSuccess();
             }, 1800);
         });
     }
@@ -252,6 +246,7 @@
         DOM.loginBtn.classList.toggle('is-loading', isLoading);
         DOM.loginBtn.disabled = isLoading;
         DOM.emailInput.disabled = isLoading;
+        if (DOM.roleInput) DOM.roleInput.disabled = isLoading;
         DOM.passwordInput.disabled = isLoading;
 
         if (DOM.togglePassword) {
@@ -265,6 +260,15 @@
     function handleLoginSuccess() {
         setLoadingState(false);
         showToast('success', 'Login successful! Redirecting to your dashboard...');
+
+        /* Allow the dashboard auth check to recognize this demo login. */
+        try {
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('stackly_user_email', DOM.emailInput.value.trim());
+            localStorage.setItem('stackly_user_role', DOM.roleInput.value);
+        } catch (e) {
+            /* localStorage not available */
+        }
 
         /* Show success checkmark overlay */
         if (DOM.successOverlay) {
@@ -295,21 +299,10 @@
     /* --------------------------------------------------------------------------
        Login Failure Handler
        -------------------------------------------------------------------------- */
-    function handleLoginFailure(email, password) {
+    function handleLoginFailure() {
         setLoadingState(false);
-
-        if (email !== DEMO_EMAIL) {
-            setError(DOM.emailGroup, 'No account found with this email');
-            shakeElement(DOM.emailGroup);
-        }
-
-        if (password !== DEMO_PASSWORD) {
-            setError(DOM.passwordGroup, 'Incorrect password. Please try again.');
-            shakeElement(DOM.passwordGroup);
-        }
-
         shakeElement(DOM.loginForm);
-        showToast('error', 'Invalid credentials. Please check your email and password.');
+        showToast('error', 'Please enter both your email and password.');
     }
 
     /* --------------------------------------------------------------------------
@@ -350,19 +343,7 @@
     var forgotLink = document.querySelector('.login-forgot-link');
     if (forgotLink) {
         forgotLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            showToast('warning', 'Password reset is not available in demo mode.');
-        });
-    }
-
-    /* --------------------------------------------------------------------------
-       Create Account Link (Placeholder)
-       -------------------------------------------------------------------------- */
-    var createAccountLink = document.querySelector('.login-footer-link');
-    if (createAccountLink) {
-        createAccountLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            showToast('warning', 'Registration is not available in demo mode.');
+            window.location.href = '404.html';
         });
     }
 

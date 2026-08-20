@@ -112,7 +112,7 @@
     function initSidebar() {
         var sidebar = document.getElementById('sidebar');
         var overlay = document.getElementById('sidebarOverlay');
-        var collapseBtn = document.getElementById('sidebarCollapseBtn');
+        var logoutBtn = document.getElementById('sidebarLogoutBtn');
         var hamburger = document.getElementById('topbarHamburger');
 
         if (!sidebar) return;
@@ -124,24 +124,7 @@
             document.body.classList.add('sidebar-collapsed');
         }
 
-        /* Collapse button */
-        if (collapseBtn) {
-            collapseBtn.addEventListener('click', function () {
-                var isMobile = window.innerWidth < 768;
-                if (isMobile) {
-                    sidebar.classList.remove('open');
-                    if (overlay) overlay.classList.remove('active');
-                    document.body.classList.remove('sidebar-overlay-active');
-                } else {
-                    sidebar.classList.toggle('collapsed');
-                    var collapsed = sidebar.classList.contains('collapsed');
-                    document.body.classList.toggle('sidebar-collapsed', collapsed);
-                    try {
-                        localStorage.setItem('arjun_sidebar_collapsed', collapsed);
-                    } catch (e) { /* ignore */ }
-                }
-            });
-        }
+        if (logoutBtn) logoutBtn.addEventListener('click', openLogoutConfirm);
 
         /* Hamburger for mobile */
         if (hamburger) {
@@ -175,25 +158,46 @@
        5. ACTIVE NAV ITEM
        ========================================================================== */
 
+    function openLogoutConfirm(e) {
+        if (e) e.preventDefault();
+        var modal = document.getElementById('logoutConfirmModal');
+        if (modal) { modal.classList.add('active'); document.body.classList.add('modal-open'); }
+    }
+
+    function closeLogoutConfirm() {
+        var modal = document.getElementById('logoutConfirmModal');
+        if (modal) { modal.classList.remove('active'); document.body.classList.remove('modal-open'); }
+    }
+
+    function confirmLogout() {
+        localStorage.removeItem('isLoggedIn');
+        closeLogoutConfirm();
+        window.location.href = 'login.html';
+    }
+
+    function initLogoutConfirm() {
+        var confirmBtn = document.getElementById('logoutContinueBtn');
+        var cancelBtn = document.getElementById('logoutCancelBtn');
+        var topCancel = document.getElementById('logoutCancelTop');
+        if (confirmBtn) confirmBtn.addEventListener('click', confirmLogout);
+        if (cancelBtn) cancelBtn.addEventListener('click', closeLogoutConfirm);
+        if (topCancel) topCancel.addEventListener('click', closeLogoutConfirm);
+    }
+
     function initNavActive() {
         var navItems = document.querySelectorAll('.sidebar-nav .nav-item');
-        var savedActive = localStorage.getItem('arjun_active_nav');
-
-        if (savedActive) {
-            navItems.forEach(function (item) {
-                item.classList.remove('active');
-                if (item.getAttribute('href') === savedActive) {
-                    item.classList.add('active');
-                }
-            });
-        }
+        var currentPage = window.location.pathname.split('/').pop() || 'dashboard.html';
+        navItems.forEach(function (item) {
+            var href = item.getAttribute('href') || '';
+            item.classList.toggle('active', currentPage === 'dashboard.html' && href === 'dashboard.html');
+        });
 
         navItems.forEach(function (item) {
             item.addEventListener('click', function () {
                 navItems.forEach(function (n) { n.classList.remove('active'); });
                 item.classList.add('active');
                 try {
-                    localStorage.setItem('arjun_active_nav', item.getAttribute('href'));
+                    localStorage.setItem('stackly_active_nav', item.getAttribute('href'));
                 } catch (e) { /* ignore */ }
 
                 /* Close mobile sidebar on nav click */
@@ -1121,13 +1125,17 @@
         }
 
         toggle.addEventListener('click', function () {
+            /* Prevent the theme repaint from delaying the next pointer action. */
+            document.documentElement.classList.add('theme-switching');
             var current = document.documentElement.getAttribute('data-theme') || 'dark';
             var next = current === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', next);
             try {
                 localStorage.setItem('arjun_dashboard_theme', next);
             } catch (e) { /* ignore */ }
-            showToast('Switched to ' + next + ' theme.', 'info');
+            requestAnimationFrame(function () {
+                document.documentElement.classList.remove('theme-switching');
+            });
         });
     }
 
@@ -1263,11 +1271,7 @@
         if (logoutBtn) {
             logoutBtn.addEventListener('click', function (e) {
                 e.preventDefault();
-                localStorage.removeItem('isLoggedIn');
-                showToast('Signing you out...', 'info');
-                setTimeout(function () {
-                    window.location.href = 'login.html';
-                }, 800);
+                openLogoutConfirm(e);
             });
         }
     }
@@ -1676,10 +1680,24 @@
        INIT — Master initialization function
        ========================================================================== */
 
+    function initUserGreeting() {
+        var email = localStorage.getItem('stackly_user_email') || '';
+        var localName = email.split('@')[0] || 'Designer';
+        var displayName = localName.replace(/[._-]+/g, ' ').replace(/\b\w/g, function (letter) { return letter.toUpperCase(); });
+        var userName = document.querySelector('.sidebar-user-name');
+        var profileName = document.querySelector('.topbar-profile-name');
+        var greeting = document.querySelector('.page-header-subtitle');
+        if (userName) userName.textContent = displayName;
+        if (profileName) profileName.textContent = displayName;
+        if (greeting) greeting.textContent = 'Welcome back, ' + displayName + '!';
+    }
+
     function initDashboard() {
         injectDynamicStyles();
         initSidebar();
+        initLogoutConfirm();
         initNavActive();
+        initUserGreeting();
         initStatCounters();
         initBarChart();
         initDonutChart();

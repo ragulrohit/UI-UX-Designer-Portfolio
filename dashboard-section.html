@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly Workspace</title>
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/dashboard.css"><link rel="stylesheet" href="css/dashboard-section.css">
+</head>
+<body class="section-page">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><a href="index.html" class="sidebar-logo"><img src="images/Stackly_logo.png" class="dashboard-brand-logo" alt="Stackly"></a></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item">▦<span class="nav-text">Dashboard</span></a>
+      <a href="dashboard-section.html?view=projects" class="nav-item" data-view="projects">▣<span class="nav-text">Projects</span></a>
+      <a href="dashboard-section.html?view=case-studies" class="nav-item" data-view="case-studies">▤<span class="nav-text">Case Studies</span></a>
+      <a href="dashboard-section.html?view=clients" class="nav-item" data-view="clients">♧<span class="nav-text">Clients</span></a>
+      <a href="dashboard-section.html?view=messages" class="nav-item" data-view="messages">✉<span class="nav-text">Messages</span><span class="nav-badge">4</span></a>
+      <a href="dashboard-section.html?view=analytics" class="nav-item" data-view="analytics">◫<span class="nav-text">Analytics</span></a>
+      <a href="dashboard-section.html?view=profile" class="nav-item" data-view="profile">◯<span class="nav-text">Profile</span></a>
+      <a href="dashboard-section.html?view=settings" class="nav-item" data-view="settings">⚙<span class="nav-text">Settings</span></a>
+    </nav>
+    <div class="sidebar-footer"><button class="sidebar-collapse-btn sidebar-logout-btn" id="logoutBtn">↪ <span class="nav-text">Logout</span></button></div>
+  </aside>
+  <div class="sidebar-overlay" id="overlay"></div>
+  <header class="topbar"><div class="topbar-left"><button class="topbar-hamburger" id="menuBtn">☰</button><div class="topbar-search"><input class="topbar-search-input" placeholder="Search workspace..."></div></div><div class="topbar-right"><button class="topbar-icon-btn">♡</button><button class="topbar-icon-btn">♧</button><div class="topbar-profile-btn"><span class="topbar-profile-avatar">S</span><span class="topbar-profile-name">Stackly</span></div></div></header>
+  <main class="main-content section-main"><div id="sectionContent"></div></main>
+  <script src="js/dashboard-section.js"></script><script src="js/custom-select.js"></script>
+</body>
+</html>

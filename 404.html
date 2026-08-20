@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found — Stackly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/404.css">
+</head>
+<body class="not-found-page">
+    <main class="not-found-card">
+        <a href="index.html" class="not-found-logo"><img src="images/Stackly_logo.png" alt="Stackly"></a>
+        <div class="not-found-code">404</div>
+        <h1>Page not found</h1>
+        <p>The page or feature you tried to open is not available yet.</p>
+        <div class="not-found-actions">
+            <button type="button" class="not-found-button not-found-button--primary" id="goBackButton">Go Back</button>
+            <a href="index.html" class="not-found-button not-found-button--secondary">Back to Home</a>
+        </div>
+    </main>
+    <script>
+        document.getElementById('goBackButton').addEventListener('click', function () {
+            if (window.history.length > 1) window.history.back();
+            else window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.signup-page .login-form-wrapper { max-width: 460px; }
+.signup-page .login-right {
+  align-items: flex-start;
+}
+.signup-page .login-form-wrapper {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.signup-page .login-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.signup-page .login-brand-logo {
+  width: min(190px, 65vw);
+  height: auto;
+  display: block;
+}
+.signup-page .login-input-group { margin-bottom: 1rem; }
+.signup-page .login-submit-btn { margin-top: .75rem; }
+.signup-page .login-brand-icon img { width: 180px; height: auto; }
+@media (max-width: 480px) { .signup-page .login-input-group { margin-bottom: .8rem; } }

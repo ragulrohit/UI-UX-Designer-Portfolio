@@ -47,8 +47,9 @@
         // Mobile hamburger toggle
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('open');
+                const isOpen = navMenu.classList.toggle('active');
+                navToggle.classList.toggle('open', isOpen);
+                navToggle.setAttribute('aria-expanded', String(isOpen));
             });
 
             // Close mobile menu when a nav link is clicked
@@ -56,6 +57,7 @@
                 link.addEventListener('click', () => {
                     navMenu.classList.remove('active');
                     navToggle.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
                 });
             });
 
@@ -68,6 +70,7 @@
                 ) {
                     navMenu.classList.remove('active');
                     navToggle.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
                 }
             });
         }
@@ -1212,6 +1215,18 @@
         window.addEventListener('resize', updateIndicator);
     }
 
+    function initCurrentPageActive() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link[href]').forEach((link) => {
+            const href = link.getAttribute('href').split('#')[0].split('?')[0];
+            if (!href || href === '#') return;
+            const normalizedHref = href === '/' ? 'index.html' : href;
+            link.classList.toggle('active', normalizedHref === currentPage);
+            if (normalizedHref === currentPage) link.setAttribute('aria-current', 'page');
+            else link.removeAttribute('aria-current');
+        });
+    }
+
     // ─────────────────────────────────────────────
     // 29. Smooth Anchor Highlight on Scroll (Bonus)
     // ─────────────────────────────────────────────
@@ -1277,7 +1292,14 @@
     // Initialize Everything
     // ─────────────────────────────────────────────
     document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.footer-social a, .footer-social-link, .social-link').forEach((socialLink) => {
+            socialLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.location.href = '404.html';
+            });
+        });
         // Core modules
+        initCurrentPageActive();
         initNavbar();
         initTheme();
         initScrollReveal();
