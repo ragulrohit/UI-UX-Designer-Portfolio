@@ -475,6 +475,40 @@ svg {
   }
 }
 
+/* Login is the primary account action in every main navbar. */
+.nav-menu > li > a[href="login.html"] {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--space-2);
+  padding: .6rem 1.15rem !important;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 999px !important;
+  background: var(--gradient-primary) !important;
+  color: #fff !important;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, .28);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.nav-menu > li > a[href="login.html"]::after {
+  display: none !important;
+}
+
+.nav-menu > li > a[href="login.html"]:hover {
+  color: #fff !important;
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 12px 30px rgba(124, 58, 237, .4);
+}
+
+@media (max-width: 768px) {
+  .nav-menu > li > a[href="login.html"] {
+    width: min(220px, 80%);
+    margin-left: 0;
+  }
+}
+
 img,
 svg {
   display: block;
@@ -763,11 +797,13 @@ p {
 .site-logo,
 .dashboard-brand-logo,
 .login-brand-logo,
-.login-brand-icon img {
+.login-brand-icon img,
+.login-logo-mark img,
+.not-found-logo img {
   box-sizing: border-box;
   border: 0;
   border-radius: 0;
-  filter: drop-shadow(0 0 1px #ffffff) drop-shadow(0 0 2px #ffffff);
+  filter: brightness(0) invert(1) !important;
 }
 
 /* Custom select dropdowns */

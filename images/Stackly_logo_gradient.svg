@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 337 103" role="img" aria-labelledby="title">
+  <title id="title">Stackly</title>
+  <defs>
+    <linearGradient id="stacklyGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="48%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <mask id="stacklyMask" maskUnits="userSpaceOnUse" x="0" y="0" width="337" height="103" mask-type="luminance">
+      <image href="Stackly_logo.png" x="0" y="0" width="337" height="103" preserveAspectRatio="none" style="filter: brightness(0) invert(1)"/>
+    </mask>
+  </defs>
+  <!-- Fallback image keeps the logo visible in browsers that block SVG image masks. -->
+  <image href="Stackly_logo.png" x="0" y="0" width="337" height="103" preserveAspectRatio="none"/>
+  <rect width="337" height="103" fill="url(#stacklyGradient)" mask="url(#stacklyMask)"/>
+</svg>
