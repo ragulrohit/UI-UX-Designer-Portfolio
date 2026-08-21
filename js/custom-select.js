@@ -6,19 +6,15 @@
             if (wrapper !== except) {
                 wrapper.classList.remove('is-open');
                 var menu = wrapper.querySelector('.custom-select-menu');
+                var button = wrapper.querySelector('.custom-select-button');
                 if (menu) menu.classList.remove('is-visible');
+                if (button) button.setAttribute('aria-expanded', 'false');
             }
         });
     }
 
-    function positionMenu(wrapper, menu, button) {
-        var rect = button.getBoundingClientRect();
-        var menuHeight = Math.min(menu.scrollHeight, 280);
-        var spaceBelow = window.innerHeight - rect.bottom - 12;
-        var openAbove = spaceBelow < Math.min(menuHeight, 220) && rect.top > menuHeight;
-        menu.style.left = rect.left + 'px';
-        menu.style.width = rect.width + 'px';
-        menu.style.top = (openAbove ? rect.top - menuHeight - 6 : rect.bottom + 6) + 'px';
+    function positionMenu(menu) {
+        menu.style.width = '100%';
     }
 
     function enhance(select) {
@@ -39,7 +35,9 @@
         var menu = document.createElement('div');
         menu.className = 'custom-select-menu';
         menu.setAttribute('role', 'listbox');
-        document.body.appendChild(menu);
+        menu.id = select.id + 'Menu';
+        button.setAttribute('aria-controls', menu.id);
+        wrapper.appendChild(menu);
 
         function sync(value) {
             var option = Array.from(select.options).find(function (item) { return item.value === value; }) || select.options[select.selectedIndex];
@@ -57,7 +55,9 @@
             item.textContent = option.textContent;
             item.dataset.value = option.value;
             item.setAttribute('role', 'option');
+            item.setAttribute('aria-disabled', option.disabled ? 'true' : 'false');
             item.addEventListener('click', function () {
+                if (option.disabled) return;
                 select.value = option.value;
                 select.dispatchEvent(new Event('change', { bubbles: true }));
                 sync(option.value);
@@ -68,13 +68,14 @@
             menu.appendChild(item);
         });
 
-        button.addEventListener('click', function () {
+        button.addEventListener('click', function (event) {
+            event.stopPropagation();
             var willOpen = !wrapper.classList.contains('is-open');
             closeAll(wrapper);
             wrapper.classList.toggle('is-open', willOpen);
             button.setAttribute('aria-expanded', String(willOpen));
             menu.classList.toggle('is-visible', willOpen);
-            if (willOpen) positionMenu(wrapper, menu, button);
+            if (willOpen) positionMenu(menu);
         });
 
         select.addEventListener('change', function () { sync(select.value); });
@@ -86,7 +87,7 @@
         document.querySelectorAll('select').forEach(enhance);
         window.addEventListener('resize', function () {
             document.querySelectorAll('.custom-select.is-open').forEach(function (wrapper) {
-                positionMenu(wrapper, wrapper.querySelector('.custom-select-menu'), wrapper.querySelector('.custom-select-button'));
+                positionMenu(wrapper.querySelector('.custom-select-menu'));
             });
         });
         document.addEventListener('click', function (event) {
