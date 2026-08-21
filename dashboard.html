@@ -18,6 +18,12 @@
             <a href="index.html" class="sidebar-logo" aria-label="Stackly - Home">
                 <img src="images/Stackly_logo.png" class="dashboard-brand-logo" alt="Stackly">
             </a>
+            <button type="button" class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close navigation menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                </svg>
+            </button>
         </div>
 
         <nav class="sidebar-nav">
@@ -187,6 +193,7 @@
             <div class="page-header-left">
                 <h1 class="page-header-title">Dashboard Overview</h1>
                 <p class="page-header-subtitle">Welcome back, Arjun!</p>
+                <p class="page-header-email" id="userEmail" aria-label="Signed-in email"></p>
             </div>
             <div class="page-header-right">
                 <span class="page-header-date" id="currentDate"></span>

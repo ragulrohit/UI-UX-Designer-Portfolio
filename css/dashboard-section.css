@@ -30,6 +30,8 @@
 .bar-set i { flex:1; height:var(--h); min-height:10px; border-radius:8px 8px 0 0; background:linear-gradient(#a78bfa,#6366f1); }
 .form-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
 .section-form label { display:grid; gap:.45rem; color:var(--text-secondary); font-size:.85rem; }
+.section-form .section-checkbox-label { display:flex; align-items:center; justify-content:space-between; gap:.75rem; min-height:42px; }
+.section-form .section-checkbox-label input[type="checkbox"] { width:18px; height:18px; min-width:18px; margin:0; accent-color:#8b5cf6; }
 .section-form input,.section-form textarea,.section-form select { width:100%; max-width:100%; min-width:0; box-sizing:border-box; padding:.8rem .9rem; border:1px solid var(--bg-glass-border); border-radius:10px; background:var(--bg-glass); color:var(--text-primary); }
 .section-form select { overflow:hidden; text-overflow:ellipsis; }
 .section-form textarea { min-height:120px; resize:vertical; }

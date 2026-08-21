@@ -528,6 +528,12 @@
   margin-bottom: 2.5rem;
 }
 
+.login-logo-link {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
 .login-brand-logo {
   width: min(190px, 65vw);
   height: auto;

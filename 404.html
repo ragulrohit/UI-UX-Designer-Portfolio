@@ -19,9 +19,19 @@
         </div>
     </main>
     <script>
-        document.getElementById('goBackButton').addEventListener('click', function () {
-            if (window.history.length > 1) window.history.back();
-            else window.location.href = 'index.html';
+        document.getElementById('goBackButton').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Prevent duplicate navigation while the browser is changing pages.
+            this.disabled = true;
+
+            // The referrer is the actual page that opened this 404 page. Replacing
+            // the current entry avoids relying on an unreliable history length.
+            if (document.referrer) {
+                window.location.replace(document.referrer);
+            } else {
+                window.location.replace('index.html');
+            }
         });
     </script>
 </body>

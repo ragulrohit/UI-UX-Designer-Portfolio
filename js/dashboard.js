@@ -114,6 +114,7 @@
         var overlay = document.getElementById('sidebarOverlay');
         var logoutBtn = document.getElementById('sidebarLogoutBtn');
         var hamburger = document.getElementById('topbarHamburger');
+        var closeButton = document.getElementById('sidebarCloseBtn');
 
         if (!sidebar) return;
 
@@ -132,6 +133,14 @@
                 sidebar.classList.add('open');
                 if (overlay) overlay.classList.add('active');
                 document.body.classList.add('sidebar-overlay-active');
+            });
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener('click', function () {
+                sidebar.classList.remove('open');
+                if (overlay) overlay.classList.remove('active');
+                document.body.classList.remove('sidebar-overlay-active');
             });
         }
 
@@ -534,6 +543,15 @@
     function initTableSearch() {
         var searchInput = document.querySelector('.projects-search-input');
         if (!searchInput) return;
+
+        searchInput.addEventListener('keydown', function (event) {
+            if (event.key !== 'Enter') return;
+
+            event.preventDefault();
+            if (searchInput.value.trim()) {
+                window.location.href = '404.html';
+            }
+        });
 
         searchInput.addEventListener('input', function () {
             var query = searchInput.value.trim().toLowerCase();
@@ -1156,7 +1174,7 @@
         /* Create dropdown */
         var dropdown = document.createElement('div');
         dropdown.className = 'notification-dropdown';
-        dropdown.style.cssText = 'position:absolute;top:calc(100% + 8px);right:0;width:340px;background:var(--bg-card,#1e1e2e);border:1px solid var(--border-color,rgba(255,255,255,0.1));border-radius:12px;box-shadow:0 16px 48px rgba(0,0,0,0.3);z-index:10000;display:none;overflow:hidden;';
+        dropdown.style.cssText = 'position:absolute;top:calc(100% + 8px);right:0;width:340px;background:var(--bg-secondary,#111127);border:1px solid var(--border-color,rgba(255,255,255,0.1));border-radius:12px;box-shadow:0 16px 48px rgba(0,0,0,0.3);z-index:10001;display:none;overflow:hidden;';
 
         dropdown.innerHTML =
             '<div style="padding:16px 18px;border-bottom:1px solid var(--border-color,rgba(255,255,255,0.1));display:flex;justify-content:space-between;align-items:center;">' +
@@ -1226,6 +1244,7 @@
                 notifications[index].read = true;
                 renderNotifications(dropdown);
                 updateNotificationBadge();
+                showToast(notifications[index].text, 'info');
             });
 
             list.appendChild(item);
@@ -1337,6 +1356,15 @@
         if (!searchInput) return;
 
         var debounceTimer = null;
+
+        searchInput.addEventListener('keydown', function (event) {
+            if (event.key !== 'Enter') return;
+
+            event.preventDefault();
+            if (searchInput.value.trim()) {
+                window.location.href = '404.html';
+            }
+        });
 
         searchInput.addEventListener('input', function () {
             clearTimeout(debounceTimer);
@@ -1687,9 +1715,11 @@
         var userName = document.querySelector('.sidebar-user-name');
         var profileName = document.querySelector('.topbar-profile-name');
         var greeting = document.querySelector('.page-header-subtitle');
+        var emailDisplay = document.getElementById('userEmail');
         if (userName) userName.textContent = displayName;
         if (profileName) profileName.textContent = displayName;
         if (greeting) greeting.textContent = 'Welcome back, ' + displayName + '!';
+        if (emailDisplay) emailDisplay.textContent = email || 'Email unavailable';
     }
 
     function initDashboard() {

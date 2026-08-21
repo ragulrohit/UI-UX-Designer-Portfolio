@@ -75,8 +75,14 @@
             });
         }
 
-        // Active navigation link based on scroll position
-        if (sections.length > 0) {
+        // Active navigation link based on scroll position. Only enable this for
+        // menus that actually contain section-anchor links; the main site menu
+        // uses page links and should keep its current-page state.
+        const hasSectionLinks = Array.from(navLinks).some(link =>
+            (link.getAttribute('href') || '').startsWith('#')
+        );
+
+        if (sections.length > 0 && hasSectionLinks) {
             const observerOptions = {
                 threshold: 0,
                 rootMargin: '-70px 0px -60% 0px'
@@ -86,6 +92,14 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const id = entry.target.getAttribute('id');
+                        const matchingLink = Array.from(navLinks).find(
+                            link => link.getAttribute('href') === `#${id}`
+                        );
+
+                        // Page-level navigation (for example Home -> index.html)
+                        // should remain active when the page has unrelated sections.
+                        if (!matchingLink) return;
+
                         navLinks.forEach(link => {
                             link.classList.remove('active');
                             if (link.getAttribute('href') === `#${id}`) {
@@ -1216,13 +1230,17 @@
     }
 
     function initCurrentPageActive() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('.nav-link[href]').forEach((link) => {
-            const href = link.getAttribute('href').split('#')[0].split('?')[0];
-            if (!href || href === '#') return;
-            const normalizedHref = href === '/' ? 'index.html' : href;
-            link.classList.toggle('active', normalizedHref === currentPage);
-            if (normalizedHref === currentPage) link.setAttribute('aria-current', 'page');
+        const currentPath = window.location.pathname;
+        const currentPage = currentPath.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-link[href]');
+
+        navLinks.forEach((link) => {
+            const linkPath = new URL(link.href, window.location.href).pathname;
+            const linkPage = linkPath.split('/').pop() || 'index.html';
+            const isCurrentPage = linkPage === currentPage;
+
+            link.classList.toggle('active', isCurrentPage);
+            if (isCurrentPage) link.setAttribute('aria-current', 'page');
             else link.removeAttribute('aria-current');
         });
     }
