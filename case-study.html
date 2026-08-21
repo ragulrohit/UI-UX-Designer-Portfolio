@@ -1282,6 +1282,11 @@
             margin-bottom: 16px;
         }
 
+        .footer-brand .footer-logo {
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
         .footer-brand p {
             color: var(--gray);
             font-size: 0.9rem;
@@ -1309,6 +1314,11 @@
 
         .footer-col a:hover {
             color: var(--primary-light);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
         }
 
         .footer-bottom {
@@ -1347,6 +1357,13 @@
             background: var(--primary);
             color: var(--white);
             transform: translateY(-3px);
+        }
+
+        .footer-bottom-links a {
+            width: auto;
+            height: auto;
+            background: transparent;
+            border-radius: 0;
         }
 
         /* ─── RESPONSIVE ─── */
@@ -2113,41 +2130,41 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">
+                    <a href="index.html" class="footer-logo">
                         <img src="images/Stackly_logo.png" class="site-logo" alt="Stackly">
                     </a>
-                    <p>Crafting thoughtful digital experiences at the intersection of design, technology, and human psychology. Based in Bangalore, working globally.</p>
+                    <p class="footer-description">A passionate UI/UX Designer creating meaningful digital experiences that bridge the gap between business goals and user needs. Based in Bangalore, India.</p>
                 </div>
-                <div class="footer-col">
-                    <h5>Navigation</h5>
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="case-studies.html">Case Studies</a>
-                    <a href="services.html">Services</a>
-                    <a href="contact.html">Contact</a>
+                <div class="footer-col footer-links">
+                    <h5 class="footer-column-title">Quick Links</h5>
+                    <a class="footer-link" href="index.html">Home</a>
+                    <a class="footer-link" href="about.html">About</a>
+                    <a class="footer-link" href="skills.html">Skills</a>
+                    <a class="footer-link" href="projects.html">Projects</a>
+                    <a class="footer-link" href="contact.html">Contact</a>
                 </div>
-                <div class="footer-col">
-                    <h5>Case Studies</h5>
-                    <a href="#">FinTech Banking App</a>
-                    <a href="#">E-Commerce Redesign</a>
-                    <a href="#">Fitness Tracker</a>
-                    <a href="#">SaaS Dashboard</a>
+                <div class="footer-col footer-links">
+                    <h5 class="footer-column-title">Services</h5>
+                    <a class="footer-link" href="services.html">UX Research</a>
+                    <a class="footer-link" href="services.html">UI Design</a>
+                    <a class="footer-link" href="services.html">Mobile App Design</a>
+                    <a class="footer-link" href="services.html">Web Design</a>
+                    <a class="footer-link" href="services.html">Design Systems</a>
                 </div>
-                <div class="footer-col">
-                    <h5>Connect</h5>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Dribbble</a>
-                    <a href="#">Behance</a>
-                    <a href="#">Twitter / X</a>
+                <div class="footer-col footer-links">
+                    <h5 class="footer-column-title">Connect</h5>
+                    <a class="footer-link" href="https://linkedin.com/in/arjunmehta">LinkedIn</a>
+                    <a class="footer-link" href="https://behance.net/arjunmehta">Behance</a>
+                    <a class="footer-link" href="https://dribbble.com/arjunmehta">Dribbble</a>
+                    <a class="footer-link" href="https://twitter.com/arjunmehta">Twitter</a>
+                    <a class="footer-link" href="mailto:arjun@designmail.com">Email Me</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Stackly. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn">in</a>
-                    <a href="#" aria-label="Dribbble">Dr</a>
-                    <a href="#" aria-label="Behance">Be</a>
-                    <a href="#" aria-label="Twitter">X</a>
+                <p class="footer-copyright">&copy; 2026 Stackly. All rights reserved.</p>
+                <div class="social-links footer-bottom-links">
+                    <a class="footer-bottom-link" href="#">Privacy Policy</a>
+                    <a class="footer-bottom-link" href="#">Terms of Service</a>
                 </div>
             </div>
         </div>
